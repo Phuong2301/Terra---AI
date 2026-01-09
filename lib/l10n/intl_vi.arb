@@ -1545,5 +1545,189 @@
       "count": {}
     }
   },
-  "onboarding_subtitle_3": "Cộng đồng đang tăng trưởng mỗi tuần."
+  "onboarding_subtitle_3": "Cộng đồng đang tăng trưởng mỗi tuần.",
+  "selectYourRole": "Chọn vai trò của bạn",
+  "whoAreYou": "Bạn là ai?",
+  "loanOfficer": "Cán bộ tín dụng",
+  "loanOfficerDesc": "Đánh giá và quản lý khoản vay nhanh chóng",
+  "farmerDesc": "Theo dõi hoạt động và dữ liệu nông trại.",
+  "fpoAdmin": "Quản trị FPO",
+  "fpoAdminDesc": "Quản lý thành viên và vận hành.",
+  "quickProfile": "Hồ sơ nhanh",
+  "tellUsAboutYou": "Hãy cho chúng tôi biết về bạn",
+  "profileHint": "Chỉ mất khoảng 10 giây. Chỉ lưu trữ trên thiết bị.",
+  "whatsYourName": "Tên của bạn là gì?",
+  "invalidName": "Vui lòng nhập tên hợp lệ",
+  "phoneOptional": "Số điện thoại (không bắt buộc)",
+  "noVerification": "Không cần xác minh",
+  "continuee": "Tiếp tục",
+  "changeLaterHint": "Bạn có thể thay đổi sau trong phần Hồ sơ.",
+  "homeTitle": "Trang chủ",
+  "demoChip": "DEMO",
+  "demoModeOn": "Chế độ Demo: BẬT",
+  "demoModeOff": "Chế độ Demo: TẮT",
+  "demoModeReset": "Đã đặt lại chế độ Demo",
+  "homeHeaderTitle": "Hiển thị kết quả ngay lập tức",
+  "homeHeaderSubtitleDemo": "Chế độ demo: dữ liệu mẫu có sẵn, xem kết quả tức thì.",
+  "homeHeaderSubtitleNormal": "MVP ưu tiên lưu cục bộ. Không cần đăng nhập.",
+  "homeNewAssessment": "Tạo đánh giá mới",
+  "homeStatFarmersTitle": "Số nông dân đã đánh giá tại Mekong",
+  "homeStatFarmersSubtitle": "+{growth} trong tuần này",
+  "@homeStatFarmersSubtitle": {
+    "placeholders": {
+      "growth": { "type": "int" }
+    }
+  },
+  "homeStatYourAssessmentsTitle": "Đánh giá của bạn",
+  "homeStatYourAssessmentsSubtitle": "Lưu trên thiết bị này",
+  "homeHistoryTitle": "Lịch sử",
+  "homeHistorySubtitle": "Xem các đánh giá trước, xuất dữ liệu",
+  "resetDemoMode": "Đặt lại chế độ Demo",
+  "newAssessment": "Tạo đánh giá mới",
+  "newAssessmentDemo": "Tạo đánh giá mới (Demo)",
+  "savingDraft": "Đang lưu bản nháp…",
+  "clearDraft": "Xoá bản nháp",
+  "resetDemoData": "Đặt lại dữ liệu demo",
+  "sectionPersonal": "Thông tin cá nhân",
+  "farmerName": "Tên nông dân",
+  "sectionFarm": "Thông tin nông trại",
+  "farmSizeHa": "Diện tích (ha)",
+  "mainCrop": "Cây trồng chính",
+  "sectionFinancial": "Tài chính",
+  "repaymentHistory": "Lịch sử trả nợ",
+  "selectRepaymentHistory": "Chọn lịch sử trả nợ",
+  "monthlyIncome": "Thu nhập hàng tháng",
+  "monthlyDebt": "Nợ hàng tháng",
+
+  "sectionFpo": "FPO",
+  "fpoMemberQuestion": "Bạn là thành viên FPO?",
+  "toggleYesNo": "Chọn Có/Không",
+  "fpoName": "Tên FPO",
+  "roleInFpoOptional": "Vai trò trong FPO (không bắt buộc)",
+  "results": "Kết quả",
+  "score": "Điểm",
+  "scoreBreakdownTitle": "Phân rã điểm số",
+  "baseScoreRuleBased": "Điểm cơ sở (theo quy tắc)",
+  "aiAdjustment": "Điều chỉnh AI",
+  "fpoBoost": "Cộng điểm FPO",
+  "finalScoreCapped": "Điểm cuối (giới hạn)",
+  "hybridModelHint": "Mô hình lai = điểm cơ sở dễ giải thích + điều chỉnh dựa trên dữ liệu.",
+  "recommendedLoanTermsTitle": "Điều khoản vay đề xuất",
+  "maxAmountLabel": "Hạn mức tối đa",
+  "interestLabel": "Lãi suất",
+  "tenureLabel": "Kỳ hạn",
+  "repaymentLabel": "Lịch trả",
+  "perYearShort": "năm",
+  "monthsShort": "tháng",
+  "fpoBenefitsTitle": "Lợi ích FPO (nâng cao)",
+  "fpoMemberHint": "Bạn là thành viên FPO — điều khoản tốt hơn so với cơ bản.",
+  "fpoNonMemberHint": "Bạn chưa là thành viên FPO — xem lợi ích khi tham gia.",
+
+  "withFpo": "Có FPO",
+  "withoutFpo": "Không FPO",
+
+  "amountLabel": "Hạn mức",
+  "sameText": "Giống nhau",
+  "differentText": "Khác nhau",
+
+  "noSavingsHint": "Không có chênh lệch tiết kiệm trong kịch bản demo này.",
+
+  "joinFpoEncourage": "Tham gia FPO để mở khóa lãi suất tốt hơn, hạn mức cao hơn và độ tin cậy lớn hơn.",
+  "joinFpoAction": "Tham gia FPO",
+  "joinFpoActionFallback": "Tham gia FPO: chuyển tới trang giới thiệu / onboarding",
+
+  "fpoSavingsMember": "💰 Tiết kiệm \\${amount} nhờ là thành viên FPO.",
+  "@fpoSavingsMember": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+
+  "fpoSavingsNonMember": "💰 Bạn có thể tiết kiệm \\${amount} nếu tham gia FPO.",
+  "@fpoSavingsNonMember": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "aiReasoning": "Cơ sở AI",
+  "viewHistory": "Xem lịch sử",
+  "done": "Xong",
+  "savedLocalComingSoon": "Đã lưu",
+  "history": "Lịch sử",
+  "deleted": "Đã xoá",
+  "noAssessmentsYet": "Chưa có đánh giá nào",
+  "createANewAssessmentToSeeItHere": "Tạo đánh giá mới để xem nó ở đây.",
+  "aiAnalyzingTitle": "🤖 AI đang phân tích…",
+  "aiUsingFarmersCount": "Đang dùng dữ liệu từ {count} nông dân",
+  "@aiUsingFarmersCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "aiThinking": "Đang xử lý…",
+  "aiStepReadingFinancialData": "Đọc dữ liệu tài chính",
+  "aiStepAnalyzingRiskFactors": "Phân tích các yếu tố rủi ro",
+  "aiStepGeneratingReport": "Tạo báo cáo",
+  "aiUsuallyTakesSeconds": "Thường chỉ mất vài giây.",
+  "share": "Chia sẻ",
+  "close": "Đóng",
+
+  "sharePdfReport": "Chia sẻ báo cáo PDF",
+  "shareImageSocial": "Chia sẻ ảnh (mạng xã hội)",
+
+  "previewShareImageTitle": "Xem trước ảnh chia sẻ",
+
+  "exportPdfFailed": "Xuất PDF thất bại: {error}",
+  "@exportPdfFailed": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "shareImageFailed": "Chia sẻ ảnh thất bại: {error}",
+  "@shareImageFailed": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "shareImageCaption": "Tôi vừa đánh giá tín dụng nông trại bằng AI!",
+
+  "farmerDefaultName": "Nông dân",
+  "farmerFileSafeName": "nongdan",
+  "shareBrandName": "Đánh giá tín dụng Mekong",
+  "shareAiModelVersion": "🧠 Mô hình AI v1.3",
+  "shareHeadline": "Kết quả đánh giá tín dụng",
+
+  "mekongRegion": "Khu vực Mekong",
+  "shareMetaLine": "{date}  •  {location}",
+  "@shareMetaLine": {
+    "placeholders": {
+      "date": { "type": "String" },
+      "location": { "type": "String" }
+    }
+  },
+
+  "aiAdjusted": "AI điều chỉnh {value}",
+  "@aiAdjusted": {
+    "placeholders": { "value": { "type": "int" } }
+  },
+
+  "shareCtaTitle": "Tôi vừa đánh giá tín dụng nông trại bằng AI!",
+  "shareCtaSubtitle": "Quét mã QR để tải ứng dụng.",
+
+  "downloadAppTitle": "Tải ứng dụng",
+  "pdfBrandName": "Đánh giá tín dụng Mekong",
+  "pdfGeneratedAt": "Tạo lúc",
+  "pdfReportTitle": "Báo cáo đánh giá tín dụng",
+  "pdfReportSubtitle": "Báo cáo chia sẻ được, tạo cục bộ, sinh bởi chấm điểm AI.",
+  "pdfFarmerInformation": "Thông tin nông hộ",
+  "pdfRiskScore": "Điểm rủi ro",
+  "pdfRecommendedLoanTerms": "Điều khoản vay đề xuất",
+  "pdfAiReasoning": "Giải thích của AI",
+  "pdfName": "Họ tên",
+  "pdfPhone": "Số điện thoại",
+  "pdfAddress": "Địa chỉ",
+  "pdfProvinceDistrict": "Tỉnh / Huyện",
+  "pdfMainCrop": "Cây trồng chính",
+  "pdfFarmSizeHa": "Diện tích (ha)",
+  "pdfScore": "Điểm",
+  "pdfBase": "Cơ bản",
+  "pdfAi": "AI",
+  "pdfFpo": "FPO",
+  "pdfMaxAmount": "Hạn mức tối đa",
+  "pdfInterest": "Lãi suất",
+  "pdfTenure": "Kỳ hạn",
+  "pdfRepayment": "Trả nợ",
+  "pdfNote": "Lưu ý: Báo cáo dùng cho demo/MVP và cần được cán bộ tín dụng thẩm định."
 }

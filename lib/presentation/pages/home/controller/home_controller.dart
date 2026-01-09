@@ -1,3 +1,4 @@
+import 'package:app_mobile/domain/services/submission_sync_service.dart';
 import 'package:app_mobile/presentation/pages/admin/stats/admin_stats_api.dart';
 import 'package:app_mobile/presentation/pages/ai/model/ai_model_stats.dart';
 import 'package:flutter/foundation.dart';
@@ -13,7 +14,7 @@ class HomeController extends ChangeNotifier {
 
   int _farmersTotal = 127;
   int _myAssessments = 0;
-  int _thisWeekGrowth = 0; // +15 this week
+  int _thisWeekGrowth = 0; 
   bool _loading = true;
 
   AiModelStats? _ai;
@@ -26,41 +27,36 @@ class HomeController extends ChangeNotifier {
 
   Future<void> init() async {
     await loadStats();
+    SubmissionSyncService.start();
   }
 
   Future<void> loadStats() async {
     _loading = true;
     notifyListeners();
 
-    // 1) local fallback (nhanh, luôn có số để hiển thị)
     final localTotal = await AssessmentLocalStore.getFarmersTotal(
       fallback: fallbackFarmersTotal,
     );
     final mine = await AssessmentLocalStore.getSubmittedCount();
 
-    // set trước để UI có data ngay
     _farmersTotal = localTotal;
     _myAssessments = mine;
     notifyListeners();
 
-    // 2) live stats từ API
     final data = await ApiAdminStats.fetchStats();
 
     if (data != null) {
       final total = _toInt(data['farmersAssessedTotal']);
       final week = _toInt(data['farmersAssessedThisWeek']);
 
-      // chỉ update nếu có giá trị hợp lệ
       if (total > 0) _farmersTotal = total;
       _thisWeekGrowth = week;
 
-      // FE-204: aiModel
       final aiRaw = data['aiModel'];
       if (aiRaw is Map) {
         final mapped = aiRaw.map((k, v) => MapEntry(k.toString(), v));
         _ai = AiModelStats.fromJson(mapped.cast<String, dynamic>());
       } else {
-        // fallback demo nếu BE chưa trả
         _ai ??= const AiModelStats(version: 'v1.3', trainedOnFarmers: 89, accuracy: 0.82);
       }
     }

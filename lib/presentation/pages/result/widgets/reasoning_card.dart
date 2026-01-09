@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../generated/l10n.dart' as l;
+
 
 class ReasoningCard extends StatelessWidget {
   const ReasoningCard({super.key, required this.text});
@@ -7,6 +9,7 @@ class ReasoningCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final t = l.S.of(context);
 
     return Container(
       padding: const EdgeInsets.all(14),
@@ -18,7 +21,7 @@ class ReasoningCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('AI Reasoning',
+          Text(t.aiReasoning,
               style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16)),
           const SizedBox(height: 8),
           Text(

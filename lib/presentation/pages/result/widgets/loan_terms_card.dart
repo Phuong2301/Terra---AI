@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../risk_scoring.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class LoanTermsCard extends StatelessWidget {
   const LoanTermsCard({
@@ -14,6 +15,7 @@ class LoanTermsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final t = l.S.of(context);
 
     Widget metric(String label, String value, IconData icon) {
       return Expanded(
@@ -29,15 +31,25 @@ class LoanTermsCard extends StatelessWidget {
             children: [
               Icon(icon, color: accent),
               const SizedBox(height: 8),
-              Text(value,
-                  style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16)),
+              Text(
+                value,
+                style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
+              ),
               const SizedBox(height: 2),
-              Text(label, style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12)),
+              Text(
+                label,
+                style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12),
+              ),
             ],
           ),
         ),
       );
     }
+
+    final maxAmountText = '\$${terms.maxAmount.toStringAsFixed(0)}';
+    final interestText = '${terms.interestRate.toStringAsFixed(1)}% / ${t.perYearShort}';
+    final tenureText = '${terms.tenureMonths} ${t.monthsShort}';
+    final repaymentText = terms.repayment; // đã dịch trong engine
 
     return Container(
       padding: const EdgeInsets.all(14),
@@ -49,24 +61,40 @@ class LoanTermsCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Recommended Loan Terms',
-              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16)),
+          Text(
+            t.recommendedLoanTermsTitle,
+            style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
+          ),
           const SizedBox(height: 10),
           Row(
             children: [
-              metric('Max amount', '\$${terms.maxAmount.toStringAsFixed(0)}',
-                  Icons.account_balance_wallet_outlined),
+              metric(
+                t.maxAmountLabel,
+                maxAmountText,
+                Icons.account_balance_wallet_outlined,
+              ),
               const SizedBox(width: 10),
-              metric('Interest', '${terms.interestRate.toStringAsFixed(1)}% / yr',
-                  Icons.percent_rounded),
+              metric(
+                t.interestLabel,
+                interestText,
+                Icons.percent_rounded,
+              ),
             ],
           ),
           const SizedBox(height: 10),
           Row(
             children: [
-              metric('Tenure', '${terms.tenureMonths} months', Icons.date_range_outlined),
+              metric(
+                t.tenureLabel,
+                tenureText,
+                Icons.date_range_outlined,
+              ),
               const SizedBox(width: 10),
-              metric('Repayment', terms.repayment, Icons.schedule_outlined),
+              metric(
+                t.repaymentLabel,
+                repaymentText,
+                Icons.schedule_outlined,
+              ),
             ],
           ),
         ],

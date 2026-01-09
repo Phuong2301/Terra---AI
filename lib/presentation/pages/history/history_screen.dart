@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '../../../../generated/l10n.dart' as l;
 import 'controller/history_controller.dart';
 import 'widgets/history_item_card.dart';
 import 'widgets/history_empty_state.dart';
@@ -23,13 +23,14 @@ class _View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final lang = l.S.of(context);
 
     return Consumer<HistoryController>(
       builder: (context, c, _) {
         return Scaffold(
           backgroundColor: cs.background,
           appBar: AppBar(
-            title: const Text('History'),
+            title: Text(lang.history),
             backgroundColor: Colors.transparent,
             elevation: 0,
             surfaceTintColor: Colors.transparent,
@@ -57,7 +58,7 @@ class _View extends StatelessWidget {
                               await c.deleteById(id);
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text('Deleted')),
+                                  SnackBar(content: Text(lang.deleted)),
                                 );
                               }
                             },

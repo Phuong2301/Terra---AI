@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_mobile/presentation/widgets/input_field/input_text.dart';
 import 'package:app_mobile/presentation/widgets/validators/validators.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class OnboardingProfileStep extends StatefulWidget {
   const OnboardingProfileStep({
@@ -47,6 +48,7 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     const accent = Color(0xFF16A34A);
+    final lang = l.S.of(context);
 
     return Scaffold(
       backgroundColor: cs.background,
@@ -59,7 +61,7 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
           onPressed: _saving ? null : widget.onBack,
           icon: const Icon(Icons.arrow_back_rounded),
         ),
-        title: const Text('Quick profile'),
+        title: Text(lang.quickProfile),
         centerTitle: true,
       ),
       body: SizedBox.expand(
@@ -119,7 +121,7 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Tell us about you',
+                                        lang.tellUsAboutYou,
                                         style: TextStyle(
                                           fontSize: 22,
                                           fontWeight: FontWeight.w900,
@@ -129,7 +131,7 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
                                       ),
                                       const SizedBox(height: 4),
                                       Text(
-                                        'Takes about 10 seconds. Stored locally only.',
+                                        lang.profileHint,
                                         style: TextStyle(
                                           color: cs.onSurfaceVariant,
                                           height: 1.35,
@@ -163,20 +165,20 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
                                 child: Column(
                                   children: [
                                     InputText(
-                                      label: "What's your name?",
+                                      label: lang.whatsYourName,
                                       controller: _nameCtrl,
                                       required: true,
                                       rules: [
-                                        V.minLength(2, message: 'Please enter a valid name'),
+                                        V.minLength(2, message: lang.invalidName),
                                       ],
                                       textInputAction: TextInputAction.next,
                                     ),
                                     const SizedBox(height: 16),
                                     InputText(
-                                      label: 'Phone number (optional)',
+                                      label: lang.phoneOptional,
                                       controller: _phoneCtrl,
                                       keyboardType: TextInputType.phone,
-                                      hintText: 'No verification',
+                                      hintText: lang.noVerification,
                                       rules: [
                                         V.phoneE164Optional(),
                                       ],
@@ -204,14 +206,14 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
                                                   height: 18,
                                                   child: CircularProgressIndicator(strokeWidth: 2),
                                                 )
-                                              : const Row(
+                                              : Row(
                                                   key: ValueKey('text'),
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [
-                                                    Icon(Icons.arrow_forward_rounded, size: 18),
-                                                    SizedBox(width: 8),
+                                                    const Icon(Icons.arrow_forward_rounded, size: 18),
+                                                    const SizedBox(width: 8),
                                                     Text(
-                                                      'Continue',
+                                                      lang.continuee,
                                                       style: TextStyle(fontWeight: FontWeight.w800),
                                                     ),
                                                   ],
@@ -223,7 +225,7 @@ class _OnboardingProfileStepState extends State<OnboardingProfileStep> {
                                     const SizedBox(height: 10),
 
                                     Text(
-                                      'You can change this later in Profile.',
+                                      lang.changeLaterHint,
                                       style: TextStyle(
                                         color: cs.onSurfaceVariant,
                                         fontSize: 12,

@@ -11,7 +11,8 @@ import 'widgets/breakdown_card.dart';
 import 'widgets/loan_terms_card.dart';
 import 'widgets/reasoning_card.dart';
 import 'widgets/actions_row.dart';
-import 'widgets/results_share_button.dart'; // ✅ thêm
+import 'widgets/results_share_button.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({super.key, this.payload});
@@ -23,25 +24,26 @@ class ResultsScreen extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     final p = payload ?? const <String, dynamic>{};
-    final result = RiskScoringEngine.evaluate(p);
-
+    final langCode = Localizations.localeOf(context).languageCode;
+    final result = RiskScoringEngine.evaluate(p, langCode: langCode);
     final color = scoreColor(result.finalScore);
     final name = (p['fullName'] ?? 'Farmer').toString();
     final isFpo = (p['isFpoMember'] ?? false) == true;
+    final lang = l.S.of(context);
 
     return Scaffold(
       backgroundColor: cs.background,
       appBar: AppBar(
-        title: const Text('Results'),
+        title: Text(lang.results),
         backgroundColor: Colors.transparent,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_rounded),
-          onPressed: () => context.pop(),
+          onPressed: () => context.go('/home'),
         ),
         actions: [
-          ResultsShareButton(payload: p, result: result), // ✅ hook PDF ở đây
+          ResultsShareButton(payload: p, result: result),
         ],
       ),
       body: ListView(
@@ -83,7 +85,7 @@ class ResultsScreen extends StatelessWidget {
             isMember: isFpo,
             onJoinFpoTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Join FPO: open info/onboarding screen')),
+                const SnackBar(content: Text('Join FPO feature is not implemented yet.')),
               );
               // context.push('/fpo-info'); // nếu bạn có route
             },

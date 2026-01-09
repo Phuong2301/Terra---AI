@@ -140,9 +140,14 @@ abstract class AcnooAppRoutes {
         ),
         GoRoute(
           path: '/assessment/new',
-          pageBuilder: (context, state) => const NoTransitionPage(
-            child: AssessmentFormScreen(),
-          ),
+          pageBuilder: (context, state) {
+            final extra = state.extra;
+            final demo = extra is Map ? (extra['demo'] == true) : false;
+
+            return NoTransitionPage(
+              child: AssessmentFormScreen(demo: demo),
+            );
+          },
         ),
         GoRoute(
           path: '/profile',

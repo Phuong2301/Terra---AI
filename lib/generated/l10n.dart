@@ -11784,6 +11784,1181 @@ class S {
       args: [],
     );
   }
+
+  /// `Select your role`
+  String get selectYourRole {
+    return Intl.message(
+      'Select your role',
+      name: 'selectYourRole',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Who are you?`
+  String get whoAreYou {
+    return Intl.message('Who are you?', name: 'whoAreYou', desc: '', args: []);
+  }
+
+  /// `Loan Officer`
+  String get loanOfficer {
+    return Intl.message(
+      'Loan Officer',
+      name: 'loanOfficer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assess and manage loans faster`
+  String get loanOfficerDesc {
+    return Intl.message(
+      'Assess and manage loans faster',
+      name: 'loanOfficerDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track farm activities and insights.`
+  String get farmerDesc {
+    return Intl.message(
+      'Track farm activities and insights.',
+      name: 'farmerDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FPO Admin`
+  String get fpoAdmin {
+    return Intl.message('FPO Admin', name: 'fpoAdmin', desc: '', args: []);
+  }
+
+  /// `Manage members and operations.`
+  String get fpoAdminDesc {
+    return Intl.message(
+      'Manage members and operations.',
+      name: 'fpoAdminDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quick profile`
+  String get quickProfile {
+    return Intl.message(
+      'Quick profile',
+      name: 'quickProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tell us about you`
+  String get tellUsAboutYou {
+    return Intl.message(
+      'Tell us about you',
+      name: 'tellUsAboutYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Takes about 10 seconds. Stored locally only.`
+  String get profileHint {
+    return Intl.message(
+      'Takes about 10 seconds. Stored locally only.',
+      name: 'profileHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What's your name?`
+  String get whatsYourName {
+    return Intl.message(
+      'What\'s your name?',
+      name: 'whatsYourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid name`
+  String get invalidName {
+    return Intl.message(
+      'Please enter a valid name',
+      name: 'invalidName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number (optional)`
+  String get phoneOptional {
+    return Intl.message(
+      'Phone number (optional)',
+      name: 'phoneOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No verification`
+  String get noVerification {
+    return Intl.message(
+      'No verification',
+      name: 'noVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continuee {
+    return Intl.message('Continue', name: 'continuee', desc: '', args: []);
+  }
+
+  /// `You can change this later in Profile.`
+  String get changeLaterHint {
+    return Intl.message(
+      'You can change this later in Profile.',
+      name: 'changeLaterHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get homeTitle {
+    return Intl.message('Home', name: 'homeTitle', desc: '', args: []);
+  }
+
+  /// `DEMO`
+  String get demoChip {
+    return Intl.message('DEMO', name: 'demoChip', desc: '', args: []);
+  }
+
+  /// `Demo Mode: ON`
+  String get demoModeOn {
+    return Intl.message(
+      'Demo Mode: ON',
+      name: 'demoModeOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Demo Mode: OFF`
+  String get demoModeOff {
+    return Intl.message(
+      'Demo Mode: OFF',
+      name: 'demoModeOff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Demo Mode reset`
+  String get demoModeReset {
+    return Intl.message(
+      'Demo Mode reset',
+      name: 'demoModeReset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show traction immediately`
+  String get homeHeaderTitle {
+    return Intl.message(
+      'Show traction immediately',
+      name: 'homeHeaderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Demo mode: pre-filled data, instant results.`
+  String get homeHeaderSubtitleDemo {
+    return Intl.message(
+      'Demo mode: pre-filled data, instant results.',
+      name: 'homeHeaderSubtitleDemo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fast, local-first MVP. No login required.`
+  String get homeHeaderSubtitleNormal {
+    return Intl.message(
+      'Fast, local-first MVP. No login required.',
+      name: 'homeHeaderSubtitleNormal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Assessment`
+  String get homeNewAssessment {
+    return Intl.message(
+      'New Assessment',
+      name: 'homeNewAssessment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farmers assessed in Mekong`
+  String get homeStatFarmersTitle {
+    return Intl.message(
+      'Farmers assessed in Mekong',
+      name: 'homeStatFarmersTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+{growth} this week`
+  String homeStatFarmersSubtitle(int growth) {
+    return Intl.message(
+      '+$growth this week',
+      name: 'homeStatFarmersSubtitle',
+      desc: '',
+      args: [growth],
+    );
+  }
+
+  /// `Your assessments`
+  String get homeStatYourAssessmentsTitle {
+    return Intl.message(
+      'Your assessments',
+      name: 'homeStatYourAssessmentsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved on this device`
+  String get homeStatYourAssessmentsSubtitle {
+    return Intl.message(
+      'Saved on this device',
+      name: 'homeStatYourAssessmentsSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get homeHistoryTitle {
+    return Intl.message(
+      'History',
+      name: 'homeHistoryTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List past assessments, export data`
+  String get homeHistorySubtitle {
+    return Intl.message(
+      'List past assessments, export data',
+      name: 'homeHistorySubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Demo Mode`
+  String get resetDemoMode {
+    return Intl.message(
+      'Reset Demo Mode',
+      name: 'resetDemoMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Assessment`
+  String get newAssessment {
+    return Intl.message(
+      'New Assessment',
+      name: 'newAssessment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Assessment (Demo)`
+  String get newAssessmentDemo {
+    return Intl.message(
+      'New Assessment (Demo)',
+      name: 'newAssessmentDemo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saving draft…`
+  String get savingDraft {
+    return Intl.message(
+      'Saving draft…',
+      name: 'savingDraft',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear draft`
+  String get clearDraft {
+    return Intl.message('Clear draft', name: 'clearDraft', desc: '', args: []);
+  }
+
+  /// `Reset demo data`
+  String get resetDemoData {
+    return Intl.message(
+      'Reset demo data',
+      name: 'resetDemoData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal`
+  String get sectionPersonal {
+    return Intl.message(
+      'Personal',
+      name: 'sectionPersonal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farmer name`
+  String get farmerName {
+    return Intl.message('Farmer name', name: 'farmerName', desc: '', args: []);
+  }
+
+  /// `Farm`
+  String get sectionFarm {
+    return Intl.message('Farm', name: 'sectionFarm', desc: '', args: []);
+  }
+
+  /// `Farm size (ha)`
+  String get farmSizeHa {
+    return Intl.message(
+      'Farm size (ha)',
+      name: 'farmSizeHa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main crop`
+  String get mainCrop {
+    return Intl.message('Main crop', name: 'mainCrop', desc: '', args: []);
+  }
+
+  /// `Financial`
+  String get sectionFinancial {
+    return Intl.message(
+      'Financial',
+      name: 'sectionFinancial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repayment history`
+  String get repaymentHistory {
+    return Intl.message(
+      'Repayment history',
+      name: 'repaymentHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select repayment history`
+  String get selectRepaymentHistory {
+    return Intl.message(
+      'Select repayment history',
+      name: 'selectRepaymentHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly income`
+  String get monthlyIncome {
+    return Intl.message(
+      'Monthly income',
+      name: 'monthlyIncome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly debt`
+  String get monthlyDebt {
+    return Intl.message(
+      'Monthly debt',
+      name: 'monthlyDebt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FPO`
+  String get sectionFpo {
+    return Intl.message('FPO', name: 'sectionFpo', desc: '', args: []);
+  }
+
+  /// `FPO member?`
+  String get fpoMemberQuestion {
+    return Intl.message(
+      'FPO member?',
+      name: 'fpoMemberQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Toggle Yes/No`
+  String get toggleYesNo {
+    return Intl.message(
+      'Toggle Yes/No',
+      name: 'toggleYesNo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FPO name`
+  String get fpoName {
+    return Intl.message('FPO name', name: 'fpoName', desc: '', args: []);
+  }
+
+  /// `Role in FPO (optional)`
+  String get roleInFpoOptional {
+    return Intl.message(
+      'Role in FPO (optional)',
+      name: 'roleInFpoOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Results`
+  String get results {
+    return Intl.message('Results', name: 'results', desc: '', args: []);
+  }
+
+  /// `Score`
+  String get score {
+    return Intl.message('Score', name: 'score', desc: '', args: []);
+  }
+
+  /// `Score Breakdown`
+  String get scoreBreakdownTitle {
+    return Intl.message(
+      'Score Breakdown',
+      name: 'scoreBreakdownTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Base score (rule-based)`
+  String get baseScoreRuleBased {
+    return Intl.message(
+      'Base score (rule-based)',
+      name: 'baseScoreRuleBased',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI adjustment`
+  String get aiAdjustment {
+    return Intl.message(
+      'AI adjustment',
+      name: 'aiAdjustment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FPO boost`
+  String get fpoBoost {
+    return Intl.message('FPO boost', name: 'fpoBoost', desc: '', args: []);
+  }
+
+  /// `Final score (capped)`
+  String get finalScoreCapped {
+    return Intl.message(
+      'Final score (capped)',
+      name: 'finalScoreCapped',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hybrid model = explainable base + data-driven adjustment.`
+  String get hybridModelHint {
+    return Intl.message(
+      'Hybrid model = explainable base + data-driven adjustment.',
+      name: 'hybridModelHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommended Loan Terms`
+  String get recommendedLoanTermsTitle {
+    return Intl.message(
+      'Recommended Loan Terms',
+      name: 'recommendedLoanTermsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Max amount`
+  String get maxAmountLabel {
+    return Intl.message(
+      'Max amount',
+      name: 'maxAmountLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interest`
+  String get interestLabel {
+    return Intl.message('Interest', name: 'interestLabel', desc: '', args: []);
+  }
+
+  /// `Tenure`
+  String get tenureLabel {
+    return Intl.message('Tenure', name: 'tenureLabel', desc: '', args: []);
+  }
+
+  /// `Repayment`
+  String get repaymentLabel {
+    return Intl.message(
+      'Repayment',
+      name: 'repaymentLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `yr`
+  String get perYearShort {
+    return Intl.message('yr', name: 'perYearShort', desc: '', args: []);
+  }
+
+  /// `months`
+  String get monthsShort {
+    return Intl.message('months', name: 'monthsShort', desc: '', args: []);
+  }
+
+  /// `FPO Benefits (Enhanced)`
+  String get fpoBenefitsTitle {
+    return Intl.message(
+      'FPO Benefits (Enhanced)',
+      name: 'fpoBenefitsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are an FPO member — terms improved vs baseline.`
+  String get fpoMemberHint {
+    return Intl.message(
+      'You are an FPO member — terms improved vs baseline.',
+      name: 'fpoMemberHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not an FPO member — see what you unlock by joining.`
+  String get fpoNonMemberHint {
+    return Intl.message(
+      'Not an FPO member — see what you unlock by joining.',
+      name: 'fpoNonMemberHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `With FPO`
+  String get withFpo {
+    return Intl.message('With FPO', name: 'withFpo', desc: '', args: []);
+  }
+
+  /// `Without FPO`
+  String get withoutFpo {
+    return Intl.message('Without FPO', name: 'withoutFpo', desc: '', args: []);
+  }
+
+  /// `Amount`
+  String get amountLabel {
+    return Intl.message('Amount', name: 'amountLabel', desc: '', args: []);
+  }
+
+  /// `Same`
+  String get sameText {
+    return Intl.message('Same', name: 'sameText', desc: '', args: []);
+  }
+
+  /// `Different`
+  String get differentText {
+    return Intl.message('Different', name: 'differentText', desc: '', args: []);
+  }
+
+  /// `No savings difference in this demo scenario.`
+  String get noSavingsHint {
+    return Intl.message(
+      'No savings difference in this demo scenario.',
+      name: 'noSavingsHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join an FPO to unlock better rates, higher limits, and more trust signals.`
+  String get joinFpoEncourage {
+    return Intl.message(
+      'Join an FPO to unlock better rates, higher limits, and more trust signals.',
+      name: 'joinFpoEncourage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join FPO`
+  String get joinFpoAction {
+    return Intl.message('Join FPO', name: 'joinFpoAction', desc: '', args: []);
+  }
+
+  /// `Join FPO: hook to onboarding / info page`
+  String get joinFpoActionFallback {
+    return Intl.message(
+      'Join FPO: hook to onboarding / info page',
+      name: 'joinFpoActionFallback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `💰 Save \${amount} by being an FPO member.`
+  String fpoSavingsMember(String amount) {
+    return Intl.message(
+      '💰 Save \\\$$amount by being an FPO member.',
+      name: 'fpoSavingsMember',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `💰 You could save \${amount} if you join an FPO.`
+  String fpoSavingsNonMember(String amount) {
+    return Intl.message(
+      '💰 You could save \\\$$amount if you join an FPO.',
+      name: 'fpoSavingsNonMember',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `AI Reasoning`
+  String get aiReasoning {
+    return Intl.message(
+      'AI Reasoning',
+      name: 'aiReasoning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View History`
+  String get viewHistory {
+    return Intl.message(
+      'View History',
+      name: 'viewHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message('Done', name: 'done', desc: '', args: []);
+  }
+
+  /// `History: FE-110 (next)`
+  String get historyComingSoon {
+    return Intl.message(
+      'History: FE-110 (next)',
+      name: 'historyComingSoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saved (local). Hook FE-109 next.`
+  String get savedLocalComingSoon {
+    return Intl.message(
+      'Saved (local). Hook FE-109 next.',
+      name: 'savedLocalComingSoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message('History', name: 'history', desc: '', args: []);
+  }
+
+  /// `Deleted`
+  String get deleted {
+    return Intl.message('Deleted', name: 'deleted', desc: '', args: []);
+  }
+
+  /// `No assessments yet`
+  String get noAssessmentsYet {
+    return Intl.message(
+      'No assessments yet',
+      name: 'noAssessmentsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a new assessment to see it here.`
+  String get createANewAssessmentToSeeItHere {
+    return Intl.message(
+      'Create a new assessment to see it here.',
+      name: 'createANewAssessmentToSeeItHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🤖 AI Analyzing…`
+  String get aiAnalyzingTitle {
+    return Intl.message(
+      '🤖 AI Analyzing…',
+      name: 'aiAnalyzingTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Using data from {count} farmers`
+  String aiUsingFarmersCount(int count) {
+    return Intl.message(
+      'Using data from $count farmers',
+      name: 'aiUsingFarmersCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Thinking…`
+  String get aiThinking {
+    return Intl.message('Thinking…', name: 'aiThinking', desc: '', args: []);
+  }
+
+  /// `Reading financial data`
+  String get aiStepReadingFinancialData {
+    return Intl.message(
+      'Reading financial data',
+      name: 'aiStepReadingFinancialData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Analyzing risk factors`
+  String get aiStepAnalyzingRiskFactors {
+    return Intl.message(
+      'Analyzing risk factors',
+      name: 'aiStepAnalyzingRiskFactors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Generating report`
+  String get aiStepGeneratingReport {
+    return Intl.message(
+      'Generating report',
+      name: 'aiStepGeneratingReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This usually takes a few seconds.`
+  String get aiUsuallyTakesSeconds {
+    return Intl.message(
+      'This usually takes a few seconds.',
+      name: 'aiUsuallyTakesSeconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share`
+  String get share {
+    return Intl.message('Share', name: 'share', desc: '', args: []);
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message('Close', name: 'close', desc: '', args: []);
+  }
+
+  /// `Share PDF report`
+  String get sharePdfReport {
+    return Intl.message(
+      'Share PDF report',
+      name: 'sharePdfReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share image (social)`
+  String get shareImageSocial {
+    return Intl.message(
+      'Share image (social)',
+      name: 'shareImageSocial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preview share image`
+  String get previewShareImageTitle {
+    return Intl.message(
+      'Preview share image',
+      name: 'previewShareImageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Export PDF failed: {error}`
+  String exportPdfFailed(String error) {
+    return Intl.message(
+      'Export PDF failed: $error',
+      name: 'exportPdfFailed',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Share image failed: {error}`
+  String shareImageFailed(String error) {
+    return Intl.message(
+      'Share image failed: $error',
+      name: 'shareImageFailed',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `I assessed my farm's credit with AI!`
+  String get shareImageCaption {
+    return Intl.message(
+      'I assessed my farm\'s credit with AI!',
+      name: 'shareImageCaption',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farmer`
+  String get farmerDefaultName {
+    return Intl.message(
+      'Farmer',
+      name: 'farmerDefaultName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `farmer`
+  String get farmerFileSafeName {
+    return Intl.message(
+      'farmer',
+      name: 'farmerFileSafeName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mekong Credit Assessment`
+  String get shareBrandName {
+    return Intl.message(
+      'Mekong Credit Assessment',
+      name: 'shareBrandName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `🧠 AI Model v1.3`
+  String get shareAiModelVersion {
+    return Intl.message(
+      '🧠 AI Model v1.3',
+      name: 'shareAiModelVersion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Assessment Result`
+  String get shareHeadline {
+    return Intl.message(
+      'Credit Assessment Result',
+      name: 'shareHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mekong region`
+  String get mekongRegion {
+    return Intl.message(
+      'Mekong region',
+      name: 'mekongRegion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{date}  •  {location}`
+  String shareMetaLine(String date, String location) {
+    return Intl.message(
+      '$date  •  $location',
+      name: 'shareMetaLine',
+      desc: '',
+      args: [date, location],
+    );
+  }
+
+  /// `AI adjusted {value}`
+  String aiAdjusted(int value) {
+    return Intl.message(
+      'AI adjusted $value',
+      name: 'aiAdjusted',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `I assessed my farm's credit with AI!`
+  String get shareCtaTitle {
+    return Intl.message(
+      'I assessed my farm\'s credit with AI!',
+      name: 'shareCtaTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan the QR code to download the app.`
+  String get shareCtaSubtitle {
+    return Intl.message(
+      'Scan the QR code to download the app.',
+      name: 'shareCtaSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download App`
+  String get downloadAppTitle {
+    return Intl.message(
+      'Download App',
+      name: 'downloadAppTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mekong Credit Assessment`
+  String get pdfBrandName {
+    return Intl.message(
+      'Mekong Credit Assessment',
+      name: 'pdfBrandName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Generated`
+  String get pdfGeneratedAt {
+    return Intl.message(
+      'Generated',
+      name: 'pdfGeneratedAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Assessment Report`
+  String get pdfReportTitle {
+    return Intl.message(
+      'Credit Assessment Report',
+      name: 'pdfReportTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shareable, local-first report generated by AI scoring.`
+  String get pdfReportSubtitle {
+    return Intl.message(
+      'Shareable, local-first report generated by AI scoring.',
+      name: 'pdfReportSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farmer Information`
+  String get pdfFarmerInformation {
+    return Intl.message(
+      'Farmer Information',
+      name: 'pdfFarmerInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Risk Score`
+  String get pdfRiskScore {
+    return Intl.message('Risk Score', name: 'pdfRiskScore', desc: '', args: []);
+  }
+
+  /// `Recommended Loan Terms`
+  String get pdfRecommendedLoanTerms {
+    return Intl.message(
+      'Recommended Loan Terms',
+      name: 'pdfRecommendedLoanTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI Reasoning`
+  String get pdfAiReasoning {
+    return Intl.message(
+      'AI Reasoning',
+      name: 'pdfAiReasoning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get pdfName {
+    return Intl.message('Name', name: 'pdfName', desc: '', args: []);
+  }
+
+  /// `Phone`
+  String get pdfPhone {
+    return Intl.message('Phone', name: 'pdfPhone', desc: '', args: []);
+  }
+
+  /// `Address`
+  String get pdfAddress {
+    return Intl.message('Address', name: 'pdfAddress', desc: '', args: []);
+  }
+
+  /// `Province / District`
+  String get pdfProvinceDistrict {
+    return Intl.message(
+      'Province / District',
+      name: 'pdfProvinceDistrict',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main crop`
+  String get pdfMainCrop {
+    return Intl.message('Main crop', name: 'pdfMainCrop', desc: '', args: []);
+  }
+
+  /// `Farm size (ha)`
+  String get pdfFarmSizeHa {
+    return Intl.message(
+      'Farm size (ha)',
+      name: 'pdfFarmSizeHa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Score`
+  String get pdfScore {
+    return Intl.message('Score', name: 'pdfScore', desc: '', args: []);
+  }
+
+  /// `Base`
+  String get pdfBase {
+    return Intl.message('Base', name: 'pdfBase', desc: '', args: []);
+  }
+
+  /// `AI`
+  String get pdfAi {
+    return Intl.message('AI', name: 'pdfAi', desc: '', args: []);
+  }
+
+  /// `FPO`
+  String get pdfFpo {
+    return Intl.message('FPO', name: 'pdfFpo', desc: '', args: []);
+  }
+
+  /// `Max amount`
+  String get pdfMaxAmount {
+    return Intl.message('Max amount', name: 'pdfMaxAmount', desc: '', args: []);
+  }
+
+  /// `Interest`
+  String get pdfInterest {
+    return Intl.message('Interest', name: 'pdfInterest', desc: '', args: []);
+  }
+
+  /// `Tenure`
+  String get pdfTenure {
+    return Intl.message('Tenure', name: 'pdfTenure', desc: '', args: []);
+  }
+
+  /// `Repayment`
+  String get pdfRepayment {
+    return Intl.message('Repayment', name: 'pdfRepayment', desc: '', args: []);
+  }
+
+  /// `Note: This report is generated for demo/MVP purposes and should be validated by a credit officer.`
+  String get pdfNote {
+    return Intl.message(
+      'Note: This report is generated for demo/MVP purposes and should be validated by a credit officer.',
+      name: 'pdfNote',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/onboarding_storage.dart';
 import '../widgets/role_card.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class OnboardingRoleStep extends StatelessWidget {
   const OnboardingRoleStep({
@@ -16,6 +17,7 @@ class OnboardingRoleStep extends StatelessWidget {
   Widget build(BuildContext context) {
     const accent = Color(0xFF2563EB);
     final cs = Theme.of(context).colorScheme;
+    final lang = l.S.of(context);
 
     return Scaffold(
       backgroundColor: cs.background,
@@ -28,7 +30,7 @@ class OnboardingRoleStep extends StatelessWidget {
           onPressed: onBack,
           icon: const Icon(Icons.arrow_back_rounded),
         ),
-        title: const Text('Select your role'),
+        title: Text(lang.selectYourRole),
         centerTitle: true,
       ),
       body: SizedBox.expand(
@@ -58,7 +60,7 @@ class OnboardingRoleStep extends StatelessWidget {
                       border: Border.all(color: cs.outlineVariant.withOpacity(0.45)),
                     ),
                     child: Text(
-                      'Who are you?',
+                      lang.whoAreYou,
                       style: TextStyle(
                         color: cs.onSurfaceVariant,
                         fontSize: 12,
@@ -72,24 +74,24 @@ class OnboardingRoleStep extends StatelessWidget {
                     child: ListView(
                       children: [
                         RoleCard(
-                          title: 'Loan Officer',
-                          subtitle: 'Assess and manage loans faster.',
+                          title: lang.loanOfficer,
+                          subtitle: lang.loanOfficerDesc,
                           icon: Icons.badge_outlined,
                           accent: const Color(0xFF2563EB),
                           onTap: () => onSelectRole(UserRole.loanOfficer),
                         ),
                         const SizedBox(height: 14),
                         RoleCard(
-                          title: 'Farmer',
-                          subtitle: 'Track farm activities and insights.',
+                          title: lang.farmer,
+                          subtitle: lang.farmerDesc,
                           icon: Icons.agriculture_outlined,
                           accent: const Color(0xFF16A34A),
                           onTap: () => onSelectRole(UserRole.farmer),
                         ),
                         const SizedBox(height: 14),
                         RoleCard(
-                          title: 'FPO Admin',
-                          subtitle: 'Manage members and operations.',
+                          title: lang.fpoAdmin,
+                          subtitle: lang.fpoAdminDesc,
                           icon: Icons.admin_panel_settings_outlined,
                           accent: const Color(0xFF7C3AED),
                           onTap: () => onSelectRole(UserRole.fpoAdmin),

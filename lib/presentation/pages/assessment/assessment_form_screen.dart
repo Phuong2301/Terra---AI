@@ -5,33 +5,38 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'assessment_form_rules.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class AssessmentFormScreen extends StatelessWidget {
-  const AssessmentFormScreen({super.key});
+  const AssessmentFormScreen({super.key, this.demo = false});
+
+  final bool demo;
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => AssessmentFormController()..init(),
-      child: const _View(),
+      create: (_) => AssessmentFormController()..init(demo: demo),
+      child: _View(demo: demo),
     );
   }
 }
 
 class _View extends StatelessWidget {
-  const _View();
+  const _View({required this.demo});
+  final bool demo;
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     const accent = Color(0xFF16A34A);
+    final t = l.S.of(context);
 
     return Consumer<AssessmentFormController>(
       builder: (context, c, _) {
         return Scaffold(
           backgroundColor: cs.background,
           appBar: AppBar(
-            title: const Text('New Assessment'),
+            title: Text(demo ? t.newAssessmentDemo : t.newAssessment),
             backgroundColor: Colors.transparent,
             elevation: 0,
             surfaceTintColor: Colors.transparent,
@@ -41,15 +46,15 @@ class _View extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 12),
                   child: Center(
                     child: Text(
-                      'Saving draft…',
+                      t.savingDraft,
                       style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12),
                     ),
                   ),
                 ),
               IconButton(
-                tooltip: 'Clear draft',
+                tooltip: demo ? t.resetDemoData : t.clearDraft,
                 onPressed: c.clearDraft,
-                icon: const Icon(Icons.delete_outline),
+                icon: Icon(demo ? Icons.restart_alt_rounded : Icons.delete_outline),
               ),
             ],
           ),
@@ -69,125 +74,140 @@ class _View extends StatelessWidget {
                       key: c.formKey,
                       child: ListView(
                         padding: EdgeInsets.fromLTRB(
-                          16, 12, 16, 16 + MediaQuery.viewInsetsOf(context).bottom,
+                          16,
+                          12,
+                          16,
+                          16 + MediaQuery.viewInsetsOf(context).bottom,
                         ),
                         children: [
-                          _Section(title: 'Personal', child: Column(
-                            children: [
-                              InputText(
-                                label: 'Farmer name',
-                                controller: c.nameCtrl,
-                                required: true,
-                                rules: kRequiredTextRules,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'Phone (optional)',
-                                controller: c.phoneCtrl,
-                                keyboardType: TextInputType.phone,
-                                rules: kPhoneRules,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'Address',
-                                controller: c.addressCtrl,
-                                required: true,
-                                rules: kRequiredTextRules,
-                              ),
-                            ],
-                          )),
-                          const SizedBox(height: 16),
-
-                          _Section(title: 'Farm', child: Column(
-                            children: [
-                              InputText(
-                                label: 'Province',
-                                controller: c.provinceCtrl,
-                                required: true,
-                                rules: kRequiredTextRules,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'District',
-                                controller: c.districtCtrl,
-                                required: true,
-                                rules: kRequiredTextRules,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'Farm size (ha)',
-                                controller: c.farmSizeCtrl,
-                                keyboardType: TextInputType.number,
-                                required: true,
-                                rules: kFarmSizeRules,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'Main crop',
-                                controller: c.cropCtrl,
-                                required: true,
-                                rules: kRequiredTextRules,
-                              ),
-                            ],
-                          )),
-                          const SizedBox(height: 16),
-
-                          _Section(title: 'Financial', child: Column(
-                            children: [
-                              InputSelect(
-                                label: 'Repayment history',
-                                hintText: 'Select repayment history',
-                                items: AssessmentFormController.repaymentItems,
-                                index: c.repaymentIndex,        
-                                required: true,
-                                onChange: c.setRepaymentIndex,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'Monthly income',
-                                controller: c.incomeCtrl,
-                                keyboardType: TextInputType.number,
-                                required: true,
-                                rules: kMoneyRules,
-                              ),
-                              const SizedBox(height: 20),
-                              InputText(
-                                label: 'Monthly debt',
-                                controller: c.debtCtrl,
-                                keyboardType: TextInputType.number,
-                                required: true,
-                                rules: kMoneyRules,
-                              ),
-                            ],
-                          )),
-                          const SizedBox(height: 16),
-
-                          _Section(title: 'FPO', child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SwitchListTile(
-                                contentPadding: EdgeInsets.zero,
-                                title: const Text('FPO member?'),
-                                subtitle: const Text('Toggle Yes/No'),
-                                value: c.isFpoMember,
-                                onChanged: c.setIsFpoMember,
-                              ),
-                              if (c.isFpoMember) ...[
-                                const SizedBox(height: 8),
+                          _Section(
+                            title: t.sectionPersonal,
+                            child: Column(
+                              children: [
                                 InputText(
-                                  label: 'FPO name',
-                                  controller: c.fpoNameCtrl,
+                                  label: t.farmerName,
+                                  controller: c.nameCtrl,
                                   required: true,
                                   rules: kRequiredTextRules,
                                 ),
                                 const SizedBox(height: 20),
                                 InputText(
-                                  label: 'Role in FPO (optional)',
-                                  controller: c.fpoRoleCtrl,
+                                  label: t.phoneOptional,
+                                  controller: c.phoneCtrl,
+                                  keyboardType: TextInputType.phone,
+                                  rules: kPhoneRules,
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.address,
+                                  controller: c.addressCtrl,
+                                  required: true,
+                                  rules: kRequiredTextRules,
                                 ),
                               ],
-                            ],
-                          )),
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+
+                          _Section(
+                            title: t.sectionFarm,
+                            child: Column(
+                              children: [
+                                InputText(
+                                  label: t.province,
+                                  controller: c.provinceCtrl,
+                                  required: true,
+                                  rules: kRequiredTextRules,
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.district,
+                                  controller: c.districtCtrl,
+                                  required: true,
+                                  rules: kRequiredTextRules,
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.farmSizeHa,
+                                  controller: c.farmSizeCtrl,
+                                  keyboardType: TextInputType.number,
+                                  required: true,
+                                  rules: kFarmSizeRules,
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.mainCrop,
+                                  controller: c.cropCtrl,
+                                  required: true,
+                                  rules: kRequiredTextRules,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+
+                          _Section(
+                            title: t.sectionFinancial,
+                            child: Column(
+                              children: [
+                                InputSelect(
+                                  label: t.repaymentHistory,
+                                  hintText: t.selectRepaymentHistory,
+                                  items: AssessmentFormController.repaymentItems,
+                                  index: c.repaymentIndex,
+                                  required: true,
+                                  onChange: c.setRepaymentIndex,
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.monthlyIncome,
+                                  controller: c.incomeCtrl,
+                                  keyboardType: TextInputType.number,
+                                  required: true,
+                                  rules: kMoneyRules,
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.monthlyDebt,
+                                  controller: c.debtCtrl,
+                                  keyboardType: TextInputType.number,
+                                  required: true,
+                                  rules: kMoneyRules,
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+
+                          _Section(
+                            title: t.sectionFpo,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SwitchListTile(
+                                  contentPadding: EdgeInsets.zero,
+                                  title: Text(t.fpoMemberQuestion),
+                                  subtitle: Text(t.toggleYesNo),
+                                  value: c.isFpoMember,
+                                  onChanged: c.setIsFpoMember,
+                                ),
+                                if (c.isFpoMember) ...[
+                                  const SizedBox(height: 8),
+                                  InputText(
+                                    label: t.fpoName,
+                                    controller: c.fpoNameCtrl,
+                                    required: true,
+                                    rules: kRequiredTextRules,
+                                  ),
+                                  const SizedBox(height: 20),
+                                  InputText(
+                                    label: t.roleInFpoOptional,
+                                    controller: c.fpoRoleCtrl,
+                                  ),
+                                ],
+                              ],
+                            ),
+                          ),
                           const SizedBox(height: 20),
 
                           SizedBox(
@@ -202,7 +222,10 @@ class _View extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(14),
                                 ),
                               ),
-                              child: const Text('Submit', style: TextStyle(fontWeight: FontWeight.w800)),
+                              child: Text(
+                                t.submit,
+                                style: const TextStyle(fontWeight: FontWeight.w800),
+                              ),
                             ),
                           ),
                         ],

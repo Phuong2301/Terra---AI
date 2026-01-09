@@ -1,5 +1,6 @@
-import 'package:app_mobile/presentation/pages/result/risk_scoring.dart';
 import 'package:flutter/material.dart';
+import 'package:app_mobile/presentation/pages/result/risk_scoring.dart';
+import '../../../../../generated/l10n.dart' as l;
 
 class FpoComparisonEnhancedCard extends StatelessWidget {
   const FpoComparisonEnhancedCard({
@@ -18,14 +19,15 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final t = l.S.of(context);
 
     final good = const Color(0xFF16A34A);
     final goodBg = good.withOpacity(0.10);
 
     // ===== Calculations =====
-    final maxAmountDiff = withFpo.maxAmount - withoutFpo.maxAmount; // >0 better
-    final rateDiff = withoutFpo.interestRate - withFpo.interestRate; // >0 better
-    final tenureDiff = withFpo.tenureMonths - withoutFpo.tenureMonths; // >0 better
+    final maxAmountDiff = withFpo.maxAmount - withoutFpo.maxAmount;
+    final rateDiff = withoutFpo.interestRate - withFpo.interestRate;
+    final tenureDiff = withFpo.tenureMonths - withoutFpo.tenureMonths;
     final savings = _estimateSavingsUSD(withFpo: withFpo, withoutFpo: withoutFpo);
 
     final withBetterAmount = withFpo.maxAmount > withoutFpo.maxAmount;
@@ -36,7 +38,7 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, box) {
         final w = box.maxWidth;
-        final labelW = w < 360 ? 108.0 : 130.0; // responsive nhẹ
+        final labelW = w < 360 ? 108.0 : 130.0;
 
         return Container(
           padding: const EdgeInsets.all(14),
@@ -55,21 +57,19 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'FPO Benefits (Enhanced)',
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
+              Text(
+                t.fpoBenefitsTitle,
+                style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
               ),
               const SizedBox(height: 6),
               Text(
-                isMember
-                    ? 'You are an FPO member — terms improved vs baseline.'
-                    : 'Not an FPO member — see what you unlock by joining.',
+                isMember ? t.fpoMemberHint : t.fpoNonMemberHint,
                 style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12, height: 1.25),
               ),
 
               const SizedBox(height: 12),
 
-              // ===== Table (stable layout) =====
+              // ===== Table =====
               Table(
                 columnWidths: {
                   0: FixedColumnWidth(labelW),
@@ -83,14 +83,14 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
                       const SizedBox(),
                       _headerCell(
                         context,
-                        title: 'With FPO',
+                        title: t.withFpo,
                         highlight: true,
                         good: good,
                         goodBg: goodBg,
                       ),
                       _headerCell(
                         context,
-                        title: 'Without FPO',
+                        title: t.withoutFpo,
                         highlight: false,
                         good: good,
                         goodBg: goodBg,
@@ -102,7 +102,7 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
 
                   _metricRow(
                     context,
-                    label: 'Max amount',
+                    label: t.maxAmountLabel,
                     withValue: '\$${withFpo.maxAmount.toStringAsFixed(0)}',
                     withoutValue: '\$${withoutFpo.maxAmount.toStringAsFixed(0)}',
                     withBetter: withBetterAmount,
@@ -115,11 +115,12 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
 
                   _metricRow(
                     context,
-                    label: 'Interest',
-                    withValue: '${withFpo.interestRate.toStringAsFixed(1)}% / yr',
-                    withoutValue: '${withoutFpo.interestRate.toStringAsFixed(1)}% / yr',
+                    label: t.interestLabel,
+                    withValue: '${withFpo.interestRate.toStringAsFixed(1)}% / ${t.perYearShort}',
+                    withoutValue: '${withoutFpo.interestRate.toStringAsFixed(1)}% / ${t.perYearShort}',
                     withBetter: withBetterInterest,
-                    withoutBetter: !withBetterInterest && withFpo.interestRate > withoutFpo.interestRate,
+                    withoutBetter:
+                        !withBetterInterest && withFpo.interestRate > withoutFpo.interestRate,
                     good: good,
                     labelW: labelW,
                   ),
@@ -128,11 +129,12 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
 
                   _metricRow(
                     context,
-                    label: 'Tenure',
-                    withValue: '${withFpo.tenureMonths} months',
-                    withoutValue: '${withoutFpo.tenureMonths} months',
+                    label: t.tenureLabel,
+                    withValue: '${withFpo.tenureMonths} ${t.monthsShort}',
+                    withoutValue: '${withoutFpo.tenureMonths} ${t.monthsShort}',
                     withBetter: withBetterTenure,
-                    withoutBetter: !withBetterTenure && withFpo.tenureMonths < withoutFpo.tenureMonths,
+                    withoutBetter:
+                        !withBetterTenure && withFpo.tenureMonths < withoutFpo.tenureMonths,
                     good: good,
                     labelW: labelW,
                   ),
@@ -141,7 +143,7 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
 
                   _metricRow(
                     context,
-                    label: 'Repayment',
+                    label: t.repaymentLabel,
                     withValue: withFpo.repayment,
                     withoutValue: withoutFpo.repayment,
                     withBetter: false,
@@ -156,7 +158,7 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
               Divider(color: cs.outlineVariant.withOpacity(0.35)),
               const SizedBox(height: 10),
 
-              // ===== Savings callout =====
+              // ===== Savings =====
               if (savings > 0)
                 Container(
                   padding: const EdgeInsets.all(12),
@@ -172,8 +174,8 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           isMember
-                              ? '💰 Save \$${savings.toStringAsFixed(0)} by being an FPO member.'
-                              : '💰 You could save \$${savings.toStringAsFixed(0)} if you join an FPO.',
+                              ? t.fpoSavingsMember(savings.toStringAsFixed(0))
+                              : t.fpoSavingsNonMember(savings.toStringAsFixed(0)),
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             color: cs.onSurface,
@@ -187,19 +189,20 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
                 )
               else
                 Text(
-                  'No savings difference in this demo scenario.',
+                  t.noSavingsHint,
                   style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12),
                 ),
 
-              // ===== Encourage join (non-member) =====
+              // ===== Encourage join =====
               if (!isMember) ...[
                 const SizedBox(height: 12),
                 Row(
                   children: [
                     Expanded(
                       child: Text(
-                        'Join an FPO to unlock better rates, higher limits, and more trust signals.',
-                        style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12, height: 1.2),
+                        t.joinFpoEncourage,
+                        style:
+                            TextStyle(color: cs.onSurfaceVariant, fontSize: 12, height: 1.2),
                       ),
                     ),
                     const SizedBox(width: 12),
@@ -207,26 +210,47 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
                       onPressed: onJoinFpoTap ??
                           () {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Join FPO: hook to onboarding / info page')),
+                              SnackBar(content: Text(t.joinFpoActionFallback)),
                             );
                           },
                       icon: const Icon(Icons.group_add_rounded, size: 18),
-                      label: const Text('Join FPO'),
+                      label: Text(t.joinFpoAction),
                     ),
                   ],
                 ),
               ],
 
-              // ===== Quick diff chips =====
               const SizedBox(height: 10),
+
+              // ===== Quick diff chips =====
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
                 children: [
-                  _diffChip(context, label: 'Amount', diffText: _fmtMoneyDiff(maxAmountDiff), goodWhenPositive: true),
-                  _diffChip(context, label: 'Interest', diffText: _fmtRateDiff(rateDiff), goodWhenPositive: true),
-                  _diffChip(context, label: 'Tenure', diffText: _fmtMonthsDiff(tenureDiff), goodWhenPositive: true),
-                  _diffChip(context, label: 'Repayment', diffText: repaymentSame ? 'Same' : 'Different', goodWhenPositive: false),
+                  _diffChip(
+                    context,
+                    label: t.amountLabel,
+                    diffText: _fmtMoneyDiff(maxAmountDiff),
+                    goodWhenPositive: true,
+                  ),
+                  _diffChip(
+                    context,
+                    label: t.interestLabel,
+                    diffText: _fmtRateDiff(rateDiff),
+                    goodWhenPositive: true,
+                  ),
+                  _diffChip(
+                    context,
+                    label: t.tenureLabel,
+                    diffText: _fmtMonthsDiff(tenureDiff),
+                    goodWhenPositive: true,
+                  ),
+                  _diffChip(
+                    context,
+                    label: t.repaymentLabel,
+                    diffText: repaymentSame ? t.sameText : t.differentText,
+                    goodWhenPositive: false,
+                  ),
                 ],
               ),
             ],
@@ -236,9 +260,10 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
     );
   }
 
-  static TableRow _spacerRow({required double height}) {
-    return TableRow(children: [SizedBox(height: height), SizedBox(height: height), SizedBox(height: height)]);
-  }
+  // ===== Helpers =====
+
+  static TableRow _spacerRow({required double height}) =>
+      TableRow(children: [SizedBox(height: height), SizedBox(height: height), SizedBox(height: height)]);
 
   static Widget _headerCell(
     BuildContext context, {
@@ -286,8 +311,10 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
   }) {
     final cs = Theme.of(context).colorScheme;
 
-    Widget labelCell() => Padding(
-          padding: const EdgeInsets.only(right: 10),
+    return TableRow(
+      children: [
+        SizedBox(
+          width: labelW,
           child: Text(
             label,
             style: TextStyle(
@@ -297,11 +324,7 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
               height: 1.15,
             ),
           ),
-        );
-
-    return TableRow(
-      children: [
-        SizedBox(width: labelW, child: labelCell()),
+        ),
         _valueCell(context, value: withValue, better: withBetter, good: good),
         _valueCell(context, value: withoutValue, better: withoutBetter, good: good),
       ],
@@ -317,7 +340,6 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     return Container(
-      margin: const EdgeInsets.only(left: 0, right: 0),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
         color: better ? good.withOpacity(0.10) : cs.surfaceContainerHighest.withOpacity(0.25),
@@ -336,7 +358,7 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
           Expanded(
             child: Center(
               child: FittedBox(
-                fit: BoxFit.scaleDown, // ✅ không "..." và không vỡ chữ
+                fit: BoxFit.scaleDown,
                 child: Text(
                   value,
                   maxLines: 1,
@@ -395,7 +417,8 @@ class FpoComparisonEnhancedCard extends StatelessWidget {
 
   static double _estimateSavingsUSD({required LoanTerms withFpo, required LoanTerms withoutFpo}) {
     final iWith = _estimateInterest(withFpo.maxAmount, withFpo.interestRate, withFpo.tenureMonths);
-    final iWithout = _estimateInterest(withoutFpo.maxAmount, withoutFpo.interestRate, withoutFpo.tenureMonths);
+    final iWithout =
+        _estimateInterest(withoutFpo.maxAmount, withoutFpo.interestRate, withoutFpo.tenureMonths);
     final s = iWithout - iWith;
     return s.isFinite ? (s > 0 ? s : 0) : 0;
   }

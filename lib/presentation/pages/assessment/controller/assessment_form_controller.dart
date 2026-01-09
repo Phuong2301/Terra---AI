@@ -1,6 +1,10 @@
 import 'dart:async';
+import 'package:app_mobile/domain/services/network_service.dart';
 import 'package:app_mobile/presentation/pages/assessment/models/assessment_draft.dart';
+import 'package:app_mobile/presentation/pages/assessment/services/api_assessment.dart';
 import 'package:app_mobile/presentation/pages/assessment/services/assessment_local_store.dart';
+import 'package:app_mobile/presentation/pages/demo/demo_mode_store.dart';
+import 'package:app_mobile/presentation/pages/demo/demo_samples.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,6 +37,8 @@ class AssessmentFormController extends ChangeNotifier {
   bool get savingDraft => _savingDraft;
 
   bool get isFpoMember => _isFpoMember;
+
+  bool _demoMode = false;
 
   List<TextEditingController> get _allCtrls => [
         nameCtrl, phoneCtrl, addressCtrl,
@@ -67,10 +73,20 @@ class AssessmentFormController extends ChangeNotifier {
     _scheduleAutosave();
   }
 
-  void init() {
+  void init({bool demo = false}) {
+    _demoMode = demo;
+
     for (final c in _allCtrls) {
       c.addListener(_scheduleAutosave);
     }
+
+    if (_demoMode) {
+      _applyDemoSample();
+      _loadingDraft = false;
+      _notify();
+      return;
+    }
+
     _loadDraft();
   }
 
@@ -143,6 +159,7 @@ class AssessmentFormController extends ChangeNotifier {
   }
 
   void _scheduleAutosave() {
+    if (_demoMode) return;
     if (_loadingDraft) return;
     _debounce?.cancel();
     _debounce = Timer(const Duration(milliseconds: 650), () async {
@@ -161,6 +178,12 @@ class AssessmentFormController extends ChangeNotifier {
     await AssessmentLocalStore.clearDraft();
     if (_disposed) return;
 
+    if (_demoMode) {
+      _applyDemoSample();
+      _notify();
+      return;
+    }
+
     for (final c in _allCtrls) {
       c.clear();
     }
@@ -169,50 +192,137 @@ class AssessmentFormController extends ChangeNotifier {
     _notify();
   }
 
+  void _applyDemoSample() {
+    final s = DemoSamples.bestCaseAssessment();
+
+    nameCtrl.text = (s['fullName'] ?? '').toString();
+    phoneCtrl.text = (s['phone'] ?? '').toString();
+    addressCtrl.text = (s['address'] ?? '').toString();
+
+    provinceCtrl.text = (s['province'] ?? '').toString();
+    districtCtrl.text = (s['district'] ?? '').toString();
+    farmSizeCtrl.text = (s['farmSizeHa'] ?? '').toString();
+    cropCtrl.text = (s['mainCrop'] ?? '').toString();
+
+    incomeCtrl.text = (s['monthlyIncome'] ?? '').toString();
+    debtCtrl.text = (s['monthlyDebt'] ?? '').toString();
+
+    final repay = (s['repaymentHistory'] ?? '').toString().trim();
+    final idx = repaymentItems.indexOf(repay);
+    _repaymentIndex = (idx >= 0) ? idx.toString() : '4';
+
+    _isFpoMember = (s['isFpoMember'] ?? false) == true;
+    fpoNameCtrl.text = (s['fpoName'] ?? '').toString();
+    fpoRoleCtrl.text = (s['fpoRole'] ?? '').toString();
+  }
+
   Future<void> submit(BuildContext context) async {
-    FocusScope.of(context).unfocus();
-    if (!(formKey.currentState?.validate() ?? false)) return;
+  FocusScope.of(context).unfocus();
+  if (!(formKey.currentState?.validate() ?? false)) return;
 
-    final draft = collectDraft();
-    final now = DateTime.now();
+  final draft = collectDraft();
+  final now = DateTime.now();
 
-    final assessment = {
-      'id': now.millisecondsSinceEpoch.toString(),
-      'createdAt': now.toIso8601String(),
-      'fullName': draft.fullName,
-      'phone': draft.phone,
-      'address': draft.address,
-      'province': draft.province,
-      'district': draft.district,
-      'farmSizeHa': draft.farmSizeHa,
-      'mainCrop': draft.mainCrop,
-      'monthlyIncome': draft.monthlyIncome,
-      'monthlyDebt': draft.monthlyDebt,
-      'repaymentHistory': draft.repaymentHistory,
-      'isFpoMember': draft.isFpoMember,
-      'fpoName': draft.fpoName,
-      'fpoRole': draft.fpoRole,
-      'status': 'submitted_local',
+  // payload cơ bản từ form
+  final assessment = <String, dynamic>{
+    'id': now.millisecondsSinceEpoch.toString(),
+    'createdAt': now.toIso8601String(),
+    'fullName': draft.fullName,
+    'phone': draft.phone,
+    'address': draft.address,
+    'province': draft.province,
+    'district': draft.district,
+    'farmSizeHa': draft.farmSizeHa,
+    'mainCrop': draft.mainCrop,
+    'monthlyIncome': draft.monthlyIncome,
+    'monthlyDebt': draft.monthlyDebt,
+    'repaymentHistory': draft.repaymentHistory,
+    'isFpoMember': draft.isFpoMember,
+    'fpoName': draft.fpoName,
+    'fpoRole': draft.fpoRole,
+  };
+
+  final isDemo = await DemoModeStore.isEnabled();
+  if (isDemo) {
+    final demo = DemoSamples.bestCaseAssessment();
+    final finalObj = {
+      ...demo,          
+      ...assessment,   
+      'status': 'submitted_demo',
     };
 
-    await AssessmentLocalStore.appendAssessment(assessment);
+    await AssessmentLocalStore.appendAssessment(finalObj);
     await AssessmentLocalStore.incCountersAfterSubmit();
     await AssessmentLocalStore.clearDraft();
-    if (_disposed) return;
 
     final farmersCount = await AssessmentLocalStore.getFarmersTotal(fallback: 127);
-    if (_disposed) return;
+    if (!context.mounted) return;
 
-    context.go(
-      '/ai-processing',
-      extra: {
-        'farmersCount': farmersCount,
-        'duration': const Duration(seconds: 7),
-        'nextRoutePath': '/results',
-        'payload': assessment,
-      },
-    );
+    context.go('/ai-processing', extra: {
+      'farmersCount': farmersCount,
+      'duration': const Duration(seconds: 2),
+      'nextRoutePath': '/results',
+      'payload': finalObj,
+    });
+    return;
   }
+
+  final online = await NetworkService.isOnline();
+
+  if (!online) {
+    final queued = {...assessment, 'status': 'queued_offline'};
+
+    await AssessmentLocalStore.enqueueSubmission(queued);
+    await AssessmentLocalStore.appendAssessment(queued);
+    await AssessmentLocalStore.incCountersAfterSubmit();
+    await AssessmentLocalStore.clearDraft();
+
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Offline: saved locally. Will submit when online.')),
+    );
+
+    final farmersCount = await AssessmentLocalStore.getFarmersTotal(fallback: 127);
+    if (!context.mounted) return;
+    context.go('/ai-processing', extra: {
+      'farmersCount': farmersCount,
+      'duration': const Duration(seconds: 3),
+      'nextRoutePath': '/results',
+      'payload': queued,
+    });
+    return;
+  }
+
+  final remotePayload = await ApiAssessment.submit(assessment);
+
+
+  final ok = remotePayload != null;
+
+  final finalObj = {
+    ...(ok ? remotePayload : assessment),
+
+    'id': (ok ? (remotePayload['id'] ?? assessment['id']) : assessment['id']),
+    'createdAt': (ok ? (remotePayload['createdAt'] ?? assessment['createdAt']) : assessment['createdAt']),
+    'status': ok ? 'submitted_remote' : 'queued_offline',
+  };
+
+  if (!ok) {
+    await AssessmentLocalStore.enqueueSubmission(finalObj);
+  }
+
+  await AssessmentLocalStore.appendAssessment(finalObj);
+  await AssessmentLocalStore.incCountersAfterSubmit();
+  await AssessmentLocalStore.clearDraft();
+
+  if (!context.mounted) return;
+
+  context.go('/ai-processing', extra: {
+    'farmersCount': await AssessmentLocalStore.getFarmersTotal(fallback: 127),
+    'duration': const Duration(seconds: 5),
+    'nextRoutePath': '/results',
+    'payload': finalObj,
+  });
+}
 
   @override
   void dispose() {

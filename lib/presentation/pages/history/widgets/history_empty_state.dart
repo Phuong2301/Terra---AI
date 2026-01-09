@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class HistoryEmptyState extends StatelessWidget {
   const HistoryEmptyState({super.key});
@@ -6,7 +7,7 @@ class HistoryEmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
-
+    final lang = l.S.of(context);
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -15,13 +16,13 @@ class HistoryEmptyState extends StatelessWidget {
           children: [
             Icon(Icons.history_rounded, size: 46, color: cs.onSurfaceVariant),
             const SizedBox(height: 10),
-            const Text(
-              'No assessments yet',
+            Text(
+              lang.noAssessmentsYet,
               style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
             ),
             const SizedBox(height: 6),
             Text(
-              'Create a new assessment to see it here.',
+              lang.createANewAssessmentToSeeItHere,
               style: TextStyle(color: cs.onSurfaceVariant),
               textAlign: TextAlign.center,
             ),

@@ -1,3 +1,4 @@
+import 'package:app_mobile/presentation/widgets/button/language_menu_button.dart';
 import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart' as l;
 
@@ -135,6 +136,7 @@ class _OnboardingIntroStepState extends State<OnboardingIntroStep> {
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 child: Row(
                   children: [
+                    const LanguageMenuButton(),
                     const Spacer(),
                     TextButton(
                       onPressed: widget.onSkip,

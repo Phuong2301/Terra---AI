@@ -20,19 +20,36 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(n) => "At most ${n} characters";
+  static String m0(value) => "AI adjusted ${value}";
 
-  static String m1(max) => "Must be ≤ ${max}";
+  static String m1(count) => "Using data from ${count} farmers";
 
-  static String m2(n) => "At least ${n} characters";
+  static String m2(n) => "At most ${n} characters";
 
-  static String m3(min) => "Must be ≥ ${min}";
+  static String m3(max) => "Must be ≤ ${max}";
 
-  static String m4(organizationName) => "Made with ❤ by ${organizationName}";
+  static String m4(n) => "At least ${n} characters";
 
-  static String m5(n) => "Up to ${n} decimal places";
+  static String m5(min) => "Must be ≥ ${min}";
 
-  static String m6(count) => "Join ${count}+ farmers";
+  static String m6(error) => "Export PDF failed: ${error}";
+
+  static String m7(amount) => "💰 Save \\\$${amount} by being an FPO member.";
+
+  static String m8(amount) =>
+      "💰 You could save \\\$${amount} if you join an FPO.";
+
+  static String m9(growth) => "+${growth} this week";
+
+  static String m10(organizationName) => "Made with ❤ by ${organizationName}";
+
+  static String m11(n) => "Up to ${n} decimal places";
+
+  static String m12(count) => "Join ${count}+ farmers";
+
+  static String m13(error) => "Share image failed: ${error}";
+
+  static String m14(date, location) => "${date}  •  ${location}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -308,7 +325,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "agreementToTerms": MessageLookupByLibrary.simpleMessage(
       "Agreement to Terms",
     ),
+    "aiAdjusted": m0,
+    "aiAdjustment": MessageLookupByLibrary.simpleMessage("AI adjustment"),
+    "aiAnalyzingTitle": MessageLookupByLibrary.simpleMessage(
+      "🤖 AI Analyzing…",
+    ),
     "aiChatbot": MessageLookupByLibrary.simpleMessage("Ai Chatbot"),
+    "aiReasoning": MessageLookupByLibrary.simpleMessage("AI Reasoning"),
+    "aiStepAnalyzingRiskFactors": MessageLookupByLibrary.simpleMessage(
+      "Analyzing risk factors",
+    ),
+    "aiStepGeneratingReport": MessageLookupByLibrary.simpleMessage(
+      "Generating report",
+    ),
+    "aiStepReadingFinancialData": MessageLookupByLibrary.simpleMessage(
+      "Reading financial data",
+    ),
+    "aiThinking": MessageLookupByLibrary.simpleMessage("Thinking…"),
+    "aiUsingFarmersCount": m1,
+    "aiUsuallyTakesSeconds": MessageLookupByLibrary.simpleMessage(
+      "This usually takes a few seconds.",
+    ),
     "alert": MessageLookupByLibrary.simpleMessage("Alert"),
     "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
     "alice": MessageLookupByLibrary.simpleMessage("Alice"),
@@ -326,6 +363,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ambient humidity(%)",
     ),
     "amount": MessageLookupByLibrary.simpleMessage("Amount"),
+    "amountLabel": MessageLookupByLibrary.simpleMessage("Amount"),
     "annualPlanSave209588year": MessageLookupByLibrary.simpleMessage(
       "Annual Plan: Save 20% - \\\$95.88/year",
     ),
@@ -377,6 +415,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "banana": MessageLookupByLibrary.simpleMessage("Banana"),
     "bananas": MessageLookupByLibrary.simpleMessage("Bananas"),
     "bankBalance": MessageLookupByLibrary.simpleMessage("Bank Balance"),
+    "baseScoreRuleBased": MessageLookupByLibrary.simpleMessage(
+      "Base score (rule-based)",
+    ),
     "bases": MessageLookupByLibrary.simpleMessage("Bases "),
     "basic": MessageLookupByLibrary.simpleMessage("Basic"),
     "basicForms": MessageLookupByLibrary.simpleMessage("Basic Forms"),
@@ -496,6 +537,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "chalky_kernel": MessageLookupByLibrary.simpleMessage("Chalky Kernel(kg)"),
     "chalky_type": MessageLookupByLibrary.simpleMessage("Chalky Type"),
     "changeAmount": MessageLookupByLibrary.simpleMessage("Change Amount"),
+    "changeLaterHint": MessageLookupByLibrary.simpleMessage(
+      "You can change this later in Profile.",
+    ),
     "changesToTheseTerms": MessageLookupByLibrary.simpleMessage(
       "Changes to These Terms",
     ),
@@ -515,12 +559,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "cleanedPaddy": MessageLookupByLibrary.simpleMessage("Cleaned paddy"),
     "cleaning_stage": MessageLookupByLibrary.simpleMessage("4.Cleaning"),
     "clear": MessageLookupByLibrary.simpleMessage("Clear"),
+    "clearDraft": MessageLookupByLibrary.simpleMessage("Clear draft"),
     "clickHereToEnterYourCode": MessageLookupByLibrary.simpleMessage(
       "Click here to enter your code",
     ),
     "clickOrDropAnImageHere": MessageLookupByLibrary.simpleMessage(
       "Click or drop an image here",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("Close"),
     "cocaCola": MessageLookupByLibrary.simpleMessage("Coca cola"),
     "code": MessageLookupByLibrary.simpleMessage("Code"),
     "codeGenerated": MessageLookupByLibrary.simpleMessage("Code Generated"),
@@ -554,6 +600,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "contentsOverviews": MessageLookupByLibrary.simpleMessage(
       "Contents Overviews",
     ),
+    "continuee": MessageLookupByLibrary.simpleMessage("Continue"),
     "conversational": MessageLookupByLibrary.simpleMessage("Conversational"),
     "copy": MessageLookupByLibrary.simpleMessage("Copy"),
     "costvsProfitAnalysis": MessageLookupByLibrary.simpleMessage(
@@ -564,6 +611,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "couponCode": MessageLookupByLibrary.simpleMessage("Coupon Code"),
     "courses": MessageLookupByLibrary.simpleMessage("Courses"),
     "courtneyHenry": MessageLookupByLibrary.simpleMessage("Courtney Henry"),
+    "createANewAssessmentToSeeItHere": MessageLookupByLibrary.simpleMessage(
+      "Create a new assessment to see it here.",
+    ),
     "createAPersonalContentForMe": MessageLookupByLibrary.simpleMessage(
       "Create a personal content for me",
     ),
@@ -623,9 +673,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteConversation": MessageLookupByLibrary.simpleMessage(
       "Delete Conversation",
     ),
+    "deleted": MessageLookupByLibrary.simpleMessage("Deleted"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "deliveryMan": MessageLookupByLibrary.simpleMessage("Delivery Man"),
     "delivery_stage": MessageLookupByLibrary.simpleMessage("Output"),
+    "demoChip": MessageLookupByLibrary.simpleMessage("DEMO"),
+    "demoModeOff": MessageLookupByLibrary.simpleMessage("Demo Mode: OFF"),
+    "demoModeOn": MessageLookupByLibrary.simpleMessage("Demo Mode: ON"),
+    "demoModeReset": MessageLookupByLibrary.simpleMessage("Demo Mode reset"),
     "describeAnImageYouWantToGenerate": MessageLookupByLibrary.simpleMessage(
       "Describe an image you want to Generate",
     ),
@@ -646,6 +701,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "devonLane": MessageLookupByLibrary.simpleMessage("Devon Lane"),
     "dianneRussell": MessageLookupByLibrary.simpleMessage("Dianne Russell"),
     "die_profile": MessageLookupByLibrary.simpleMessage("Die Profile (mm)"),
+    "differentText": MessageLookupByLibrary.simpleMessage("Different"),
     "disabledInput": MessageLookupByLibrary.simpleMessage("Disabled Input"),
     "discount": MessageLookupByLibrary.simpleMessage("Discount"),
     "district": MessageLookupByLibrary.simpleMessage("District"),
@@ -658,6 +714,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "dolorem sunt corrupti",
     ),
     "doloribuseEtEos": MessageLookupByLibrary.simpleMessage("doloribus et eos"),
+    "done": MessageLookupByLibrary.simpleMessage("Done"),
+    "downloadAppTitle": MessageLookupByLibrary.simpleMessage("Download App"),
     "downloadFiels": MessageLookupByLibrary.simpleMessage("Download Fiels"),
     "draftNews": MessageLookupByLibrary.simpleMessage("Draft News"),
     "drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
@@ -780,10 +838,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_valid_positive": MessageLookupByLibrary.simpleMessage("Must be > 0"),
     "enterprise": MessageLookupByLibrary.simpleMessage("Enterprise"),
     "entries": MessageLookupByLibrary.simpleMessage("entries"),
-    "err_max_length": m0,
-    "err_max_number": m1,
-    "err_min_length": m2,
-    "err_min_number": m3,
+    "err_max_length": m2,
+    "err_max_number": m3,
+    "err_min_length": m4,
+    "err_min_number": m5,
     "error": MessageLookupByLibrary.simpleMessage("404"),
     "estherHoward": MessageLookupByLibrary.simpleMessage("Esther Howard"),
     "etEaQuis": MessageLookupByLibrary.simpleMessage("et ea quis"),
@@ -799,6 +857,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "exportCSV": MessageLookupByLibrary.simpleMessage("Export CSV"),
     "exportExcel": MessageLookupByLibrary.simpleMessage("Export Excel"),
     "exportPDF": MessageLookupByLibrary.simpleMessage("Export PDF"),
+    "exportPdfFailed": m6,
     "fAQs": MessageLookupByLibrary.simpleMessage("FAQs"),
     "factory_approx_waster_percentage_qty":
         MessageLookupByLibrary.simpleMessage("Approx Waster Percentage/Qty"),
@@ -886,7 +945,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "family": MessageLookupByLibrary.simpleMessage("Family"),
     "familyS": MessageLookupByLibrary.simpleMessage("Family\'s"),
     "fanta": MessageLookupByLibrary.simpleMessage("Fanta"),
+    "farmSizeHa": MessageLookupByLibrary.simpleMessage("Farm size (ha)"),
     "farmer": MessageLookupByLibrary.simpleMessage("Farmer"),
+    "farmerDefaultName": MessageLookupByLibrary.simpleMessage("Farmer"),
+    "farmerDesc": MessageLookupByLibrary.simpleMessage(
+      "Track farm activities and insights.",
+    ),
+    "farmerFileSafeName": MessageLookupByLibrary.simpleMessage("farmer"),
+    "farmerName": MessageLookupByLibrary.simpleMessage("Farmer name"),
     "farmer_id": MessageLookupByLibrary.simpleMessage("Farmer Id"),
     "farmer_name": MessageLookupByLibrary.simpleMessage("Farmer Name"),
     "fashion": MessageLookupByLibrary.simpleMessage("Fashion"),
@@ -898,6 +964,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "fileInput": MessageLookupByLibrary.simpleMessage("File Input"),
     "fileName": MessageLookupByLibrary.simpleMessage("File Name"),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+    "finalScoreCapped": MessageLookupByLibrary.simpleMessage(
+      "Final score (capped)",
+    ),
     "final_brown_rice_output": MessageLookupByLibrary.simpleMessage(
       "Raw Rice(kg)",
     ),
@@ -958,6 +1027,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "forms": MessageLookupByLibrary.simpleMessage("Forms"),
     "forward": MessageLookupByLibrary.simpleMessage("Forward"),
     "fourth": MessageLookupByLibrary.simpleMessage("Fourth"),
+    "fpoAdmin": MessageLookupByLibrary.simpleMessage("FPO Admin"),
+    "fpoAdminDesc": MessageLookupByLibrary.simpleMessage(
+      "Manage members and operations.",
+    ),
+    "fpoBenefitsTitle": MessageLookupByLibrary.simpleMessage(
+      "FPO Benefits (Enhanced)",
+    ),
+    "fpoBoost": MessageLookupByLibrary.simpleMessage("FPO boost"),
+    "fpoMemberHint": MessageLookupByLibrary.simpleMessage(
+      "You are an FPO member — terms improved vs baseline.",
+    ),
+    "fpoMemberQuestion": MessageLookupByLibrary.simpleMessage("FPO member?"),
+    "fpoName": MessageLookupByLibrary.simpleMessage("FPO name"),
+    "fpoNonMemberHint": MessageLookupByLibrary.simpleMessage(
+      "Not an FPO member — see what you unlock by joining.",
+    ),
+    "fpoSavingsMember": m7,
+    "fpoSavingsNonMember": m8,
     "free": MessageLookupByLibrary.simpleMessage("Free"),
     "freePlan": MessageLookupByLibrary.simpleMessage("Free Plan"),
     "freeUsers": MessageLookupByLibrary.simpleMessage("Free Users"),
@@ -1043,7 +1130,36 @@ class MessageLookup extends MessageLookupByLibrary {
     "heyThereIm": MessageLookupByLibrary.simpleMessage("Hey there I’m"),
     "high": MessageLookupByLibrary.simpleMessage("High"),
     "highlight": MessageLookupByLibrary.simpleMessage(" highlight "),
+    "history": MessageLookupByLibrary.simpleMessage("History"),
+    "historyComingSoon": MessageLookupByLibrary.simpleMessage(
+      "History: FE-110 (next)",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "homeHeaderSubtitleDemo": MessageLookupByLibrary.simpleMessage(
+      "Demo mode: pre-filled data, instant results.",
+    ),
+    "homeHeaderSubtitleNormal": MessageLookupByLibrary.simpleMessage(
+      "Fast, local-first MVP. No login required.",
+    ),
+    "homeHeaderTitle": MessageLookupByLibrary.simpleMessage(
+      "Show traction immediately",
+    ),
+    "homeHistorySubtitle": MessageLookupByLibrary.simpleMessage(
+      "List past assessments, export data",
+    ),
+    "homeHistoryTitle": MessageLookupByLibrary.simpleMessage("History"),
+    "homeNewAssessment": MessageLookupByLibrary.simpleMessage("New Assessment"),
+    "homeStatFarmersSubtitle": m9,
+    "homeStatFarmersTitle": MessageLookupByLibrary.simpleMessage(
+      "Farmers assessed in Mekong",
+    ),
+    "homeStatYourAssessmentsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Saved on this device",
+    ),
+    "homeStatYourAssessmentsTitle": MessageLookupByLibrary.simpleMessage(
+      "Your assessments",
+    ),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("Home"),
     "horizontalCards": MessageLookupByLibrary.simpleMessage("Horizontal Cards"),
     "hoursAgo": MessageLookupByLibrary.simpleMessage("15 hours ago"),
     "hoverTable": MessageLookupByLibrary.simpleMessage("Hover Table"),
@@ -1067,6 +1183,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Husking Status",
     ),
     "husking_stage": MessageLookupByLibrary.simpleMessage("6.DeHusking"),
+    "hybridModelHint": MessageLookupByLibrary.simpleMessage(
+      "Hybrid model = explainable base + data-driven adjustment.",
+    ),
     "idealForBusinessesWhoNeedPersonalizedServicesAndSecurityForLargeTeams":
         MessageLookupByLibrary.simpleMessage(
           "Ideal for businesses who need personalized services and security for large teams.",
@@ -1165,7 +1284,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Instant Access to our design system",
     ),
     "instructional": MessageLookupByLibrary.simpleMessage("Instructional"),
+    "interestLabel": MessageLookupByLibrary.simpleMessage("Interest"),
     "intermediate": MessageLookupByLibrary.simpleMessage("Intermediate"),
+    "invalidName": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid name",
+    ),
     "invalid_format": MessageLookupByLibrary.simpleMessage("Invalid format"),
     "invalid_phone_e164": MessageLookupByLibrary.simpleMessage(
       "Invalid phone (9–15 digits, optional +)",
@@ -1190,6 +1313,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "jennyWilson": MessageLookupByLibrary.simpleMessage("Jenny Wilson"),
     "jeromeBell": MessageLookupByLibrary.simpleMessage("Jerome Bell"),
     "joinDate": MessageLookupByLibrary.simpleMessage("Join Date"),
+    "joinFpoAction": MessageLookupByLibrary.simpleMessage("Join FPO"),
+    "joinFpoActionFallback": MessageLookupByLibrary.simpleMessage(
+      "Join FPO: hook to onboarding / info page",
+    ),
+    "joinFpoEncourage": MessageLookupByLibrary.simpleMessage(
+      "Join an FPO to unlock better rates, higher limits, and more trust signals.",
+    ),
     "joinYourCompanyPremiumAndExperience": MessageLookupByLibrary.simpleMessage(
       "Join [Your Company] Premium and experience [Product/Service] like never before. Subscribe now to unlock a new level of excellence",
     ),
@@ -1238,6 +1368,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Load More Buttons",
     ),
     "loading": MessageLookupByLibrary.simpleMessage("Loading"),
+    "loanOfficer": MessageLookupByLibrary.simpleMessage("Loan Officer"),
+    "loanOfficerDesc": MessageLookupByLibrary.simpleMessage(
+      "Assess and manage loans faster",
+    ),
     "locationPerformance": MessageLookupByLibrary.simpleMessage(
       "Location performance",
     ),
@@ -1271,7 +1405,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Machine Efficiency",
     ),
     "machine_id": MessageLookupByLibrary.simpleMessage("Machine ID"),
-    "madeWithFooter": m4,
+    "madeWithFooter": m10,
+    "mainCrop": MessageLookupByLibrary.simpleMessage("Main crop"),
     "makeUpA5SentenceStoryAboutSharkyAToothBrushingSharkSuperhero":
         MessageLookupByLibrary.simpleMessage(
           "Make up a 5-sentence story about \"Sharky\", a tooth-brushing shark superhero",
@@ -1281,9 +1416,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "maps": MessageLookupByLibrary.simpleMessage("Maps"),
     "marvinMcKinney": MessageLookupByLibrary.simpleMessage("Marvin McKinney"),
     "master": MessageLookupByLibrary.simpleMessage("Master"),
-    "max_decimal_places": m5,
+    "maxAmountLabel": MessageLookupByLibrary.simpleMessage("Max amount"),
+    "max_decimal_places": m11,
     "maximumLength": MessageLookupByLibrary.simpleMessage("Maximum Length"),
     "medium": MessageLookupByLibrary.simpleMessage("Medium"),
+    "mekongRegion": MessageLookupByLibrary.simpleMessage("Mekong region"),
     "menuSize": MessageLookupByLibrary.simpleMessage("Menu Size"),
     "message": MessageLookupByLibrary.simpleMessage("30 Message"),
     "messageAllOperator": MessageLookupByLibrary.simpleMessage(
@@ -1309,11 +1446,14 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "month": MessageLookupByLibrary.simpleMessage("Month"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
+    "monthlyDebt": MessageLookupByLibrary.simpleMessage("Monthly debt"),
     "monthlyExpense": MessageLookupByLibrary.simpleMessage("Monthly Expense"),
+    "monthlyIncome": MessageLookupByLibrary.simpleMessage("Monthly income"),
     "monthlyPlan999Month": MessageLookupByLibrary.simpleMessage(
       "Monthly Plan: \\\$9.99/month",
     ),
     "monthlyValue": MessageLookupByLibrary.simpleMessage("Monthly Value"),
+    "monthsShort": MessageLookupByLibrary.simpleMessage("months"),
     "mostViewedNews": MessageLookupByLibrary.simpleMessage("Most Viewed News"),
     "move": MessageLookupByLibrary.simpleMessage("Move"),
     "moveItemFrom": MessageLookupByLibrary.simpleMessage("Move item from"),
@@ -1330,6 +1470,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "needAnAccount": MessageLookupByLibrary.simpleMessage("Need an account?"),
     "net_weight": MessageLookupByLibrary.simpleMessage("Net Weight(kg)"),
     "neutral": MessageLookupByLibrary.simpleMessage("Neutral"),
+    "newAssessment": MessageLookupByLibrary.simpleMessage("New Assessment"),
+    "newAssessmentDemo": MessageLookupByLibrary.simpleMessage(
+      "New Assessment (Demo)",
+    ),
     "newConversation": MessageLookupByLibrary.simpleMessage("New Conversation"),
     "newOrders": MessageLookupByLibrary.simpleMessage("New Orders"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
@@ -1338,11 +1482,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "newsReaders": MessageLookupByLibrary.simpleMessage("News Readers"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "nihilPorroEst": MessageLookupByLibrary.simpleMessage("nihil porro est"),
+    "noAssessmentsYet": MessageLookupByLibrary.simpleMessage(
+      "No assessments yet",
+    ),
     "noData": MessageLookupByLibrary.simpleMessage("No data"),
     "noDataFound": MessageLookupByLibrary.simpleMessage("No data found!"),
     "noInfor": MessageLookupByLibrary.simpleMessage(
       "No information, you need to log in",
     ),
+    "noSavingsHint": MessageLookupByLibrary.simpleMessage(
+      "No savings difference in this demo scenario.",
+    ),
+    "noVerification": MessageLookupByLibrary.simpleMessage("No verification"),
     "no_data": MessageLookupByLibrary.simpleMessage("No data"),
     "notSatisfiedWeOfferA30DayMoneyBackGuaranteeNoQuestionsAsked":
         MessageLookupByLibrary.simpleMessage(
@@ -1382,7 +1533,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_title_2": MessageLookupByLibrary.simpleMessage(
       "AI-powered decisions",
     ),
-    "onboarding_title_3": m6,
+    "onboarding_title_3": m12,
     "one": MessageLookupByLibrary.simpleMessage("One"),
     "openAI": MessageLookupByLibrary.simpleMessage("Open AI"),
     "openAIAdmin": MessageLookupByLibrary.simpleMessage("Open AI Admin"),
@@ -1460,13 +1611,54 @@ class MessageLookup extends MessageLookupByLibrary {
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "paymentStatus": MessageLookupByLibrary.simpleMessage("Payment Status"),
     "paymentType": MessageLookupByLibrary.simpleMessage("Payment Type"),
+    "pdfAddress": MessageLookupByLibrary.simpleMessage("Address"),
+    "pdfAi": MessageLookupByLibrary.simpleMessage("AI"),
+    "pdfAiReasoning": MessageLookupByLibrary.simpleMessage("AI Reasoning"),
+    "pdfBase": MessageLookupByLibrary.simpleMessage("Base"),
+    "pdfBrandName": MessageLookupByLibrary.simpleMessage(
+      "Mekong Credit Assessment",
+    ),
+    "pdfFarmSizeHa": MessageLookupByLibrary.simpleMessage("Farm size (ha)"),
+    "pdfFarmerInformation": MessageLookupByLibrary.simpleMessage(
+      "Farmer Information",
+    ),
+    "pdfFpo": MessageLookupByLibrary.simpleMessage("FPO"),
+    "pdfGeneratedAt": MessageLookupByLibrary.simpleMessage("Generated"),
+    "pdfInterest": MessageLookupByLibrary.simpleMessage("Interest"),
+    "pdfMainCrop": MessageLookupByLibrary.simpleMessage("Main crop"),
+    "pdfMaxAmount": MessageLookupByLibrary.simpleMessage("Max amount"),
+    "pdfName": MessageLookupByLibrary.simpleMessage("Name"),
+    "pdfNote": MessageLookupByLibrary.simpleMessage(
+      "Note: This report is generated for demo/MVP purposes and should be validated by a credit officer.",
+    ),
+    "pdfPhone": MessageLookupByLibrary.simpleMessage("Phone"),
+    "pdfProvinceDistrict": MessageLookupByLibrary.simpleMessage(
+      "Province / District",
+    ),
+    "pdfRecommendedLoanTerms": MessageLookupByLibrary.simpleMessage(
+      "Recommended Loan Terms",
+    ),
+    "pdfRepayment": MessageLookupByLibrary.simpleMessage("Repayment"),
+    "pdfReportSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Shareable, local-first report generated by AI scoring.",
+    ),
+    "pdfReportTitle": MessageLookupByLibrary.simpleMessage(
+      "Credit Assessment Report",
+    ),
+    "pdfRiskScore": MessageLookupByLibrary.simpleMessage("Risk Score"),
+    "pdfScore": MessageLookupByLibrary.simpleMessage("Score"),
+    "pdfTenure": MessageLookupByLibrary.simpleMessage("Tenure"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "pendingOrder": MessageLookupByLibrary.simpleMessage("Pending Order"),
     "pendingWithdraw": MessageLookupByLibrary.simpleMessage("Pending Withdraw"),
+    "perYearShort": MessageLookupByLibrary.simpleMessage("yr"),
     "personal": MessageLookupByLibrary.simpleMessage("Personal"),
     "persuasive": MessageLookupByLibrary.simpleMessage("Persuasive"),
     "phone": MessageLookupByLibrary.simpleMessage("Phone"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "phoneOptional": MessageLookupByLibrary.simpleMessage(
+      "Phone number (optional)",
+    ),
     "photo": MessageLookupByLibrary.simpleMessage("Photo"),
     "photo_invoice": MessageLookupByLibrary.simpleMessage("Photo Invoice"),
     "photo_of_id_of_vehicle_driver": MessageLookupByLibrary.simpleMessage(
@@ -1560,6 +1752,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "premix_added": MessageLookupByLibrary.simpleMessage("Premix added(kg)"),
     "present": MessageLookupByLibrary.simpleMessage("Present"),
+    "previewShareImageTitle": MessageLookupByLibrary.simpleMessage(
+      "Preview share image",
+    ),
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "priceRange": MessageLookupByLibrary.simpleMessage("Price Range"),
@@ -1590,6 +1785,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "proficient": MessageLookupByLibrary.simpleMessage("Proficient"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileHint": MessageLookupByLibrary.simpleMessage(
+      "Takes about 10 seconds. Stored locally only.",
+    ),
     "profilePicture": MessageLookupByLibrary.simpleMessage("Profile Picture"),
     "profit": MessageLookupByLibrary.simpleMessage("Profit"),
     "profit_margin_percent": MessageLookupByLibrary.simpleMessage(
@@ -1639,6 +1837,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quiaNecessitatibusMolestiae": MessageLookupByLibrary.simpleMessage(
       "quia necessitatibus molestiae",
     ),
+    "quickProfile": MessageLookupByLibrary.simpleMessage("Quick profile"),
     "quizName": MessageLookupByLibrary.simpleMessage("Quiz Name"),
     "quotation": MessageLookupByLibrary.simpleMessage("Quotation"),
     "ralphEdwards": MessageLookupByLibrary.simpleMessage("Ralph Edwards"),
@@ -1659,6 +1858,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Recent Registered Influencer",
     ),
     "recentSales": MessageLookupByLibrary.simpleMessage("Recent Sales"),
+    "recommendedLoanTermsTitle": MessageLookupByLibrary.simpleMessage(
+      "Recommended Loan Terms",
+    ),
     "red_yellow_kernels": MessageLookupByLibrary.simpleMessage(
       "Red/Yellow Kernels(%)",
     ),
@@ -1681,6 +1883,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "religion": MessageLookupByLibrary.simpleMessage("Religion"),
     "remaining_qty": MessageLookupByLibrary.simpleMessage("Remaining Qty"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
+    "repaymentHistory": MessageLookupByLibrary.simpleMessage(
+      "Repayment history",
+    ),
+    "repaymentLabel": MessageLookupByLibrary.simpleMessage("Repayment"),
     "repellendusEumEveniet": MessageLookupByLibrary.simpleMessage(
       "repellendus eum eveniet",
     ),
@@ -1691,6 +1897,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "rerum sint aliquid",
     ),
     "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+    "resetDemoData": MessageLookupByLibrary.simpleMessage("Reset demo data"),
+    "resetDemoMode": MessageLookupByLibrary.simpleMessage("Reset Demo Mode"),
+    "results": MessageLookupByLibrary.simpleMessage("Results"),
     "revenue": MessageLookupByLibrary.simpleMessage("Revenue"),
     "review": MessageLookupByLibrary.simpleMessage("Review"),
     "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
@@ -1703,6 +1912,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "rice_type": MessageLookupByLibrary.simpleMessage("Rice type"),
     "riskFreeSatisfactionGuaranteed": MessageLookupByLibrary.simpleMessage(
       "Risk-Free Satisfaction Guaranteed",
+    ),
+    "roleInFpoOptional": MessageLookupByLibrary.simpleMessage(
+      "Role in FPO (optional)",
     ),
     "rounded": MessageLookupByLibrary.simpleMessage("Rounded"),
     "roundedInput": MessageLookupByLibrary.simpleMessage("Rounded Input"),
@@ -1724,15 +1936,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "salesOverview": MessageLookupByLibrary.simpleMessage("Sales Overview"),
     "salesPrice": MessageLookupByLibrary.simpleMessage("Sales Price"),
     "salesRatio": MessageLookupByLibrary.simpleMessage("Sales Ratio"),
+    "sameText": MessageLookupByLibrary.simpleMessage("Same"),
     "samsung": MessageLookupByLibrary.simpleMessage("Samsung"),
     "savannahNguyen": MessageLookupByLibrary.simpleMessage("Savannah Nguyen"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "saveFrom": MessageLookupByLibrary.simpleMessage("Save From"),
+    "savedLocalComingSoon": MessageLookupByLibrary.simpleMessage(
+      "Saved (local). Hook FE-109 next.",
+    ),
+    "savingDraft": MessageLookupByLibrary.simpleMessage("Saving draft…"),
     "scanSearchProductByCodeOrName": MessageLookupByLibrary.simpleMessage(
       "Scan / search product by code or name",
     ),
     "science": MessageLookupByLibrary.simpleMessage("Science"),
+    "score": MessageLookupByLibrary.simpleMessage("Score"),
+    "scoreBreakdownTitle": MessageLookupByLibrary.simpleMessage(
+      "Score Breakdown",
+    ),
     "screw_rpm": MessageLookupByLibrary.simpleMessage("Screw RPM"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "searchProductByName": MessageLookupByLibrary.simpleMessage(
@@ -1740,6 +1961,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "second": MessageLookupByLibrary.simpleMessage("Second"),
     "secondary": MessageLookupByLibrary.simpleMessage("Secondary"),
+    "sectionFarm": MessageLookupByLibrary.simpleMessage("Farm"),
+    "sectionFinancial": MessageLookupByLibrary.simpleMessage("Financial"),
+    "sectionFpo": MessageLookupByLibrary.simpleMessage("FPO"),
+    "sectionPersonal": MessageLookupByLibrary.simpleMessage("Personal"),
     "seeDetail": MessageLookupByLibrary.simpleMessage("See detail"),
     "seiving_rice": MessageLookupByLibrary.simpleMessage("Sevied Rice Qty(kg)"),
     "seiving_stage": MessageLookupByLibrary.simpleMessage("10.Sieving"),
@@ -1763,6 +1988,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectItems": MessageLookupByLibrary.simpleMessage("Select Items"),
     "selectOne": MessageLookupByLibrary.simpleMessage("Select One"),
     "selectPosition": MessageLookupByLibrary.simpleMessage("Select Position"),
+    "selectRepaymentHistory": MessageLookupByLibrary.simpleMessage(
+      "Select repayment history",
+    ),
     "selectSize": MessageLookupByLibrary.simpleMessage("Select Size"),
     "selectStartDate": MessageLookupByLibrary.simpleMessage(
       "Select start Date",
@@ -1775,6 +2003,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectYouStatus": MessageLookupByLibrary.simpleMessage(
       "Select you status",
     ),
+    "selectYourRole": MessageLookupByLibrary.simpleMessage("Select your role"),
     "send": MessageLookupByLibrary.simpleMessage("Send"),
     "senior": MessageLookupByLibrary.simpleMessage("Senior"),
     "sent": MessageLookupByLibrary.simpleMessage("Sent"),
@@ -1792,6 +2021,31 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shapesStyles": MessageLookupByLibrary.simpleMessage("Shapes Styles"),
+    "share": MessageLookupByLibrary.simpleMessage("Share"),
+    "shareAiModelVersion": MessageLookupByLibrary.simpleMessage(
+      "🧠 AI Model v1.3",
+    ),
+    "shareBrandName": MessageLookupByLibrary.simpleMessage(
+      "Mekong Credit Assessment",
+    ),
+    "shareCtaSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Scan the QR code to download the app.",
+    ),
+    "shareCtaTitle": MessageLookupByLibrary.simpleMessage(
+      "I assessed my farm\'s credit with AI!",
+    ),
+    "shareHeadline": MessageLookupByLibrary.simpleMessage(
+      "Credit Assessment Result",
+    ),
+    "shareImageCaption": MessageLookupByLibrary.simpleMessage(
+      "I assessed my farm\'s credit with AI!",
+    ),
+    "shareImageFailed": m13,
+    "shareImageSocial": MessageLookupByLibrary.simpleMessage(
+      "Share image (social)",
+    ),
+    "shareMetaLine": m14,
+    "sharePdfReport": MessageLookupByLibrary.simpleMessage("Share PDF report"),
     "sharePercent": MessageLookupByLibrary.simpleMessage("Share (%)"),
     "shipped": MessageLookupByLibrary.simpleMessage("Shipped"),
     "shipper_id": MessageLookupByLibrary.simpleMessage("Shipper id"),
@@ -2071,7 +2325,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "taste_profile": MessageLookupByLibrary.simpleMessage("Taste Profile"),
     "tax": MessageLookupByLibrary.simpleMessage("Tax"),
     "technology": MessageLookupByLibrary.simpleMessage("Technology"),
+    "tellUsAboutYou": MessageLookupByLibrary.simpleMessage("Tell us about you"),
     "template": MessageLookupByLibrary.simpleMessage("Template"),
+    "tenureLabel": MessageLookupByLibrary.simpleMessage("Tenure"),
     "termsConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",
     ),
@@ -2175,6 +2431,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "todayIncome": MessageLookupByLibrary.simpleMessage("Today Income"),
     "todayPresent": MessageLookupByLibrary.simpleMessage("Today Present"),
     "todaySendSMS": MessageLookupByLibrary.simpleMessage("12 Today Send SMS"),
+    "toggleYesNo": MessageLookupByLibrary.simpleMessage("Toggle Yes/No"),
     "toneOfVoice": MessageLookupByLibrary.simpleMessage("Tone of Voice"),
     "top5PurchasingProduct": MessageLookupByLibrary.simpleMessage(
       "Top 5 Purchasing Product",
@@ -2364,6 +2621,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "view": MessageLookupByLibrary.simpleMessage("View"),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
+    "viewHistory": MessageLookupByLibrary.simpleMessage("View History"),
     "viewed": MessageLookupByLibrary.simpleMessage("Viewed"),
     "visitsByDay": MessageLookupByLibrary.simpleMessage("Visits By Day"),
     "vitamin_b12": MessageLookupByLibrary.simpleMessage("Vitamin B12"),
@@ -2435,6 +2693,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "What should I do if I encounter technical issues?",
         ),
+    "whatsYourName": MessageLookupByLibrary.simpleMessage("What\'s your name?"),
     "whimsicalWeddingGraphicsToDesignYour":
         MessageLookupByLibrary.simpleMessage(
           "Whimsical Wedding Graphics to Design Your",
@@ -2443,9 +2702,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "white_rice_output": MessageLookupByLibrary.simpleMessage(
       "White Rice Output (kg)",
     ),
+    "whoAreYou": MessageLookupByLibrary.simpleMessage("Who are you?"),
     "widgets": MessageLookupByLibrary.simpleMessage("Widgets"),
+    "withFpo": MessageLookupByLibrary.simpleMessage("With FPO"),
     "withdraw": MessageLookupByLibrary.simpleMessage("Withdraw"),
     "withdrawReport": MessageLookupByLibrary.simpleMessage("Withdraw Report"),
+    "withoutFpo": MessageLookupByLibrary.simpleMessage("Without FPO"),
     "womanBag": MessageLookupByLibrary.simpleMessage("Woman Bag"),
     "womanDress": MessageLookupByLibrary.simpleMessage("Woman Dress"),
     "wordGenerated": MessageLookupByLibrary.simpleMessage("Word Generated"),

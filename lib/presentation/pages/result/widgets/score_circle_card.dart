@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../generated/l10n.dart' as l;
+
 
 class ScoreCircleCard extends StatelessWidget {
   const ScoreCircleCard({
@@ -16,6 +18,7 @@ class ScoreCircleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final value = (score / 100).clamp(0.0, 1.0);
+    final lang = l.S.of(context);
 
     return Container(
       padding: const EdgeInsets.all(16),
@@ -32,9 +35,8 @@ class ScoreCircleCard extends StatelessWidget {
         ],
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center, // ✅ tránh bị crop top
+        crossAxisAlignment: CrossAxisAlignment.center, 
         children: [
-          // ✅ fixed box để không bị cắt
           SizedBox(
             width: 118,
             height: 118,
@@ -81,7 +83,7 @@ class ScoreCircleCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Score',
+                          lang.score,
                           style: TextStyle(
                             color: cs.onSurfaceVariant,
                             fontSize: 11,
@@ -110,14 +112,6 @@ class ScoreCircleCard extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     color: color,
                     height: 1.1,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  'Color-coded for quick decisions (green/yellow/red).',
-                  style: TextStyle(
-                    color: cs.onSurfaceVariant,
-                    height: 1.25,
                   ),
                 ),
               ],

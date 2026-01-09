@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../generated/l10n.dart' as l;
 
 class AiProcessingScreen extends StatefulWidget {
   const AiProcessingScreen({
@@ -79,11 +81,13 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final t = l.S.of(context);
+
     const accentA = Color(0xFF2563EB);
     const accentB = Color(0xFF16A34A);
 
     return PopScope(
-      canPop: false, 
+      canPop: false,
       child: Scaffold(
         backgroundColor: cs.background,
         body: SizedBox.expand(
@@ -99,7 +103,7 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
                     const SizedBox(height: 10),
 
                     Text(
-                      '🤖 AI Analyzing…',
+                      t.aiAnalyzingTitle,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w900,
@@ -108,7 +112,7 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Using data from ${widget.farmersCount} farmers',
+                      t.aiUsingFarmersCount(widget.farmersCount),
                       style: TextStyle(color: cs.onSurfaceVariant),
                       textAlign: TextAlign.center,
                     ),
@@ -167,7 +171,7 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
                               ),
                               const SizedBox(height: 14),
                               Text(
-                                'Thinking…',
+                                t.aiThinking,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w800,
                                   color: cs.onSurface,
@@ -189,23 +193,23 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
                     // Steps
                     _StepRow(
                       done: _step1,
-                      text: 'Reading financial data',
+                      text: t.aiStepReadingFinancialData,
                     ),
                     const SizedBox(height: 8),
                     _StepRow(
                       done: _step2,
-                      text: 'Analyzing risk factors',
+                      text: t.aiStepAnalyzingRiskFactors,
                     ),
                     const SizedBox(height: 8),
                     _StepRow(
                       done: _step3,
-                      text: 'Generating report',
+                      text: t.aiStepGeneratingReport,
                     ),
 
                     const SizedBox(height: 16),
 
                     Text(
-                      'This usually takes a few seconds.',
+                      t.aiUsuallyTakesSeconds,
                       style: TextStyle(color: cs.onSurfaceVariant, fontSize: 12),
                     ),
                   ],

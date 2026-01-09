@@ -1544,5 +1544,190 @@
         "count": {}
         }
     },
-    "onboarding_subtitle_3": "A growing community, updated weekly."
+    "onboarding_subtitle_3": "A growing community, updated weekly.",
+    "selectYourRole": "Select your role",
+    "whoAreYou": "Who are you?",
+    "loanOfficer": "Loan Officer",
+    "loanOfficerDesc": "Assess and manage loans faster",
+    "farmerDesc": "Track farm activities and insights.",
+    "fpoAdmin": "FPO Admin",
+    "fpoAdminDesc": "Manage members and operations.",
+    "quickProfile": "Quick profile",
+    "tellUsAboutYou": "Tell us about you",
+    "profileHint": "Takes about 10 seconds. Stored locally only.",
+    "whatsYourName": "What's your name?",
+    "invalidName": "Please enter a valid name",
+    "phoneOptional": "Phone number (optional)",
+    "noVerification": "No verification",
+    "continuee": "Continue",
+    "changeLaterHint": "You can change this later in Profile.",
+    "homeTitle": "Home",
+  "demoChip": "DEMO",
+  "demoModeOn": "Demo Mode: ON",
+  "demoModeOff": "Demo Mode: OFF",
+  "demoModeReset": "Demo Mode reset",
+  "homeHeaderTitle": "Show traction immediately",
+  "homeHeaderSubtitleDemo": "Demo mode: pre-filled data, instant results.",
+  "homeHeaderSubtitleNormal": "Fast, local-first MVP. No login required.",
+  "homeNewAssessment": "New Assessment",
+  "homeStatFarmersTitle": "Farmers assessed in Mekong",
+  "homeStatFarmersSubtitle": "+{growth} this week",
+  "@homeStatFarmersSubtitle": {
+    "placeholders": {
+      "growth": { "type": "int" }
+    }
+  },
+  "homeStatYourAssessmentsTitle": "Your assessments",
+  "homeStatYourAssessmentsSubtitle": "Saved on this device",
+  "homeHistoryTitle": "History",
+  "homeHistorySubtitle": "List past assessments, export data",
+  "resetDemoMode": "Reset Demo Mode",
+  "newAssessment": "New Assessment",
+  "newAssessmentDemo": "New Assessment (Demo)",
+  "savingDraft": "Saving draft…",
+  "clearDraft": "Clear draft",
+  "resetDemoData": "Reset demo data",
+  "sectionPersonal": "Personal",
+  "farmerName": "Farmer name",
+  "sectionFarm": "Farm",
+  "farmSizeHa": "Farm size (ha)",
+  "mainCrop": "Main crop",
+  "sectionFinancial": "Financial",
+  "repaymentHistory": "Repayment history",
+  "selectRepaymentHistory": "Select repayment history",
+  "monthlyIncome": "Monthly income",
+  "monthlyDebt": "Monthly debt",
+
+  "sectionFpo": "FPO",
+  "fpoMemberQuestion": "FPO member?",
+  "toggleYesNo": "Toggle Yes/No",
+  "fpoName": "FPO name",
+  "roleInFpoOptional": "Role in FPO (optional)",
+  "results": "Results",
+  "score": "Score",
+  "scoreBreakdownTitle": "Score Breakdown",
+  "baseScoreRuleBased": "Base score (rule-based)",
+  "aiAdjustment": "AI adjustment",
+  "fpoBoost": "FPO boost",
+  "finalScoreCapped": "Final score (capped)",
+  "hybridModelHint": "Hybrid model = explainable base + data-driven adjustment.",
+  "recommendedLoanTermsTitle": "Recommended Loan Terms",
+  "maxAmountLabel": "Max amount",
+  "interestLabel": "Interest",
+  "tenureLabel": "Tenure",
+  "repaymentLabel": "Repayment",
+  "perYearShort": "yr",
+  "monthsShort": "months",
+  "fpoBenefitsTitle": "FPO Benefits (Enhanced)",
+  "fpoMemberHint": "You are an FPO member — terms improved vs baseline.",
+  "fpoNonMemberHint": "Not an FPO member — see what you unlock by joining.",
+
+  "withFpo": "With FPO",
+  "withoutFpo": "Without FPO",
+
+  "amountLabel": "Amount",
+  "sameText": "Same",
+  "differentText": "Different",
+
+  "noSavingsHint": "No savings difference in this demo scenario.",
+
+  "joinFpoEncourage": "Join an FPO to unlock better rates, higher limits, and more trust signals.",
+  "joinFpoAction": "Join FPO",
+  "joinFpoActionFallback": "Join FPO: hook to onboarding / info page",
+
+  "fpoSavingsMember": "💰 Save \\${amount} by being an FPO member.",
+  "@fpoSavingsMember": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+
+  "fpoSavingsNonMember": "💰 You could save \\${amount} if you join an FPO.",
+  "@fpoSavingsNonMember": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "aiReasoning": "AI Reasoning",
+  "viewHistory": "View History",
+  "done": "Done",
+  "historyComingSoon": "History: FE-110 (next)",
+  "savedLocalComingSoon": "Saved (local). Hook FE-109 next.",
+  "history": "History",
+  "deleted": "Deleted",
+  "noAssessmentsYet": "No assessments yet",
+  "createANewAssessmentToSeeItHere": "Create a new assessment to see it here.",
+  "aiAnalyzingTitle": "🤖 AI Analyzing…",
+  "aiUsingFarmersCount": "Using data from {count} farmers",
+  "@aiUsingFarmersCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "aiThinking": "Thinking…",
+  "aiStepReadingFinancialData": "Reading financial data",
+  "aiStepAnalyzingRiskFactors": "Analyzing risk factors",
+  "aiStepGeneratingReport": "Generating report",
+  "aiUsuallyTakesSeconds": "This usually takes a few seconds.",
+  "share": "Share",
+  "close": "Close",
+
+  "sharePdfReport": "Share PDF report",
+  "shareImageSocial": "Share image (social)",
+
+  "previewShareImageTitle": "Preview share image",
+
+  "exportPdfFailed": "Export PDF failed: {error}",
+  "@exportPdfFailed": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "shareImageFailed": "Share image failed: {error}",
+  "@shareImageFailed": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "shareImageCaption": "I assessed my farm's credit with AI!",
+
+  "farmerDefaultName": "Farmer",
+  "farmerFileSafeName": "farmer",
+  "shareBrandName": "Mekong Credit Assessment",
+  "shareAiModelVersion": "🧠 AI Model v1.3",
+  "shareHeadline": "Credit Assessment Result",
+
+  "mekongRegion": "Mekong region",
+  "shareMetaLine": "{date}  •  {location}",
+  "@shareMetaLine": {
+    "placeholders": {
+      "date": { "type": "String" },
+      "location": { "type": "String" }
+    }
+  },
+
+  "aiAdjusted": "AI adjusted {value}",
+  "@aiAdjusted": {
+    "placeholders": { "value": { "type": "int" } }
+  },
+
+  "shareCtaTitle": "I assessed my farm's credit with AI!",
+  "shareCtaSubtitle": "Scan the QR code to download the app.",
+
+  "downloadAppTitle": "Download App",
+  "pdfBrandName": "Mekong Credit Assessment",
+  "pdfGeneratedAt": "Generated",
+  "pdfReportTitle": "Credit Assessment Report",
+  "pdfReportSubtitle": "Shareable, local-first report generated by AI scoring.",
+  "pdfFarmerInformation": "Farmer Information",
+  "pdfRiskScore": "Risk Score",
+  "pdfRecommendedLoanTerms": "Recommended Loan Terms",
+  "pdfAiReasoning": "AI Reasoning",
+  "pdfName": "Name",
+  "pdfPhone": "Phone",
+  "pdfAddress": "Address",
+  "pdfProvinceDistrict": "Province / District",
+  "pdfMainCrop": "Main crop",
+  "pdfFarmSizeHa": "Farm size (ha)",
+  "pdfScore": "Score",
+  "pdfBase": "Base",
+  "pdfAi": "AI",
+  "pdfFpo": "FPO",
+  "pdfMaxAmount": "Max amount",
+  "pdfInterest": "Interest",
+  "pdfTenure": "Tenure",
+  "pdfRepayment": "Repayment",
+  "pdfNote": "Note: This report is generated for demo/MVP purposes and should be validated by a credit officer."
 }

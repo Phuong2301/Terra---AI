@@ -20,19 +20,37 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
-  static String m0(n) => "Tối đa ${n} ký tự";
+  static String m0(value) => "AI điều chỉnh ${value}";
 
-  static String m1(max) => "Phải ≤ ${max}";
+  static String m1(count) => "Đang dùng dữ liệu từ ${count} nông dân";
 
-  static String m2(n) => "Tối thiểu ${n} ký tự";
+  static String m2(n) => "Tối đa ${n} ký tự";
 
-  static String m3(min) => "Phải ≥ ${min}";
+  static String m3(max) => "Phải ≤ ${max}";
 
-  static String m4(organizationName) => "Made with ❤ by ${organizationName}";
+  static String m4(n) => "Tối thiểu ${n} ký tự";
 
-  static String m5(n) => "Tối đa ${n} số thập phân";
+  static String m5(min) => "Phải ≥ ${min}";
 
-  static String m6(count) => "Tham gia cùng ${count}+ nông dân";
+  static String m6(error) => "Xuất PDF thất bại: ${error}";
+
+  static String m7(amount) =>
+      "💰 Tiết kiệm \\\$${amount} nhờ là thành viên FPO.";
+
+  static String m8(amount) =>
+      "💰 Bạn có thể tiết kiệm \\\$${amount} nếu tham gia FPO.";
+
+  static String m9(growth) => "+${growth} trong tuần này";
+
+  static String m10(organizationName) => "Made with ❤ by ${organizationName}";
+
+  static String m11(n) => "Tối đa ${n} số thập phân";
+
+  static String m12(count) => "Tham gia cùng ${count}+ nông dân";
+
+  static String m13(error) => "Chia sẻ ảnh thất bại: ${error}";
+
+  static String m14(date, location) => "${date}  •  ${location}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -308,7 +326,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "agreementToTerms": MessageLookupByLibrary.simpleMessage(
       "Agreement to Terms",
     ),
+    "aiAdjusted": m0,
+    "aiAdjustment": MessageLookupByLibrary.simpleMessage("Điều chỉnh AI"),
+    "aiAnalyzingTitle": MessageLookupByLibrary.simpleMessage(
+      "🤖 AI đang phân tích…",
+    ),
     "aiChatbot": MessageLookupByLibrary.simpleMessage("Ai Chatbot"),
+    "aiReasoning": MessageLookupByLibrary.simpleMessage("Cơ sở AI"),
+    "aiStepAnalyzingRiskFactors": MessageLookupByLibrary.simpleMessage(
+      "Phân tích các yếu tố rủi ro",
+    ),
+    "aiStepGeneratingReport": MessageLookupByLibrary.simpleMessage(
+      "Tạo báo cáo",
+    ),
+    "aiStepReadingFinancialData": MessageLookupByLibrary.simpleMessage(
+      "Đọc dữ liệu tài chính",
+    ),
+    "aiThinking": MessageLookupByLibrary.simpleMessage("Đang xử lý…"),
+    "aiUsingFarmersCount": m1,
+    "aiUsuallyTakesSeconds": MessageLookupByLibrary.simpleMessage(
+      "Thường chỉ mất vài giây.",
+    ),
     "alert": MessageLookupByLibrary.simpleMessage("Alert"),
     "alerts": MessageLookupByLibrary.simpleMessage("Alerts"),
     "alice": MessageLookupByLibrary.simpleMessage("Alice"),
@@ -324,6 +362,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ambient_humidity": MessageLookupByLibrary.simpleMessage("Độ ẩm(%)"),
     "amount": MessageLookupByLibrary.simpleMessage("Amount"),
+    "amountLabel": MessageLookupByLibrary.simpleMessage("Hạn mức"),
     "annualPlanSave209588year": MessageLookupByLibrary.simpleMessage(
       "Annual Plan: Save 20% - \\\$95.88/year",
     ),
@@ -379,6 +418,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "banana": MessageLookupByLibrary.simpleMessage("Banana"),
     "bananas": MessageLookupByLibrary.simpleMessage("Bananas"),
     "bankBalance": MessageLookupByLibrary.simpleMessage("Bank Balance"),
+    "baseScoreRuleBased": MessageLookupByLibrary.simpleMessage(
+      "Điểm cơ sở (theo quy tắc)",
+    ),
     "bases": MessageLookupByLibrary.simpleMessage("Bases "),
     "basic": MessageLookupByLibrary.simpleMessage("Basic"),
     "basicForms": MessageLookupByLibrary.simpleMessage("Basic Forms"),
@@ -498,6 +540,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "chalky_kernel": MessageLookupByLibrary.simpleMessage("Hạt Phế (kg)"),
     "chalky_type": MessageLookupByLibrary.simpleMessage("Loại phế"),
     "changeAmount": MessageLookupByLibrary.simpleMessage("Change Amount"),
+    "changeLaterHint": MessageLookupByLibrary.simpleMessage(
+      "Bạn có thể thay đổi sau trong phần Hồ sơ.",
+    ),
     "changesToTheseTerms": MessageLookupByLibrary.simpleMessage(
       "Changes to These Terms",
     ),
@@ -517,12 +562,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "cleanedPaddy": MessageLookupByLibrary.simpleMessage("Lúa đã làm sạch"),
     "cleaning_stage": MessageLookupByLibrary.simpleMessage("4.Làm sạch"),
     "clear": MessageLookupByLibrary.simpleMessage("Clear"),
+    "clearDraft": MessageLookupByLibrary.simpleMessage("Xoá bản nháp"),
     "clickHereToEnterYourCode": MessageLookupByLibrary.simpleMessage(
       "Click here to enter your code",
     ),
     "clickOrDropAnImageHere": MessageLookupByLibrary.simpleMessage(
       "Click or drop an image here",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("Đóng"),
     "cocaCola": MessageLookupByLibrary.simpleMessage("Coca cola"),
     "code": MessageLookupByLibrary.simpleMessage("Code"),
     "codeGenerated": MessageLookupByLibrary.simpleMessage("Code Generated"),
@@ -556,6 +603,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "contentsOverviews": MessageLookupByLibrary.simpleMessage(
       "Contents Overviews",
     ),
+    "continuee": MessageLookupByLibrary.simpleMessage("Tiếp tục"),
     "conversational": MessageLookupByLibrary.simpleMessage("Conversational"),
     "copy": MessageLookupByLibrary.simpleMessage("Copy"),
     "costvsProfitAnalysis": MessageLookupByLibrary.simpleMessage(
@@ -566,6 +614,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "couponCode": MessageLookupByLibrary.simpleMessage("Coupon Code"),
     "courses": MessageLookupByLibrary.simpleMessage("Courses"),
     "courtneyHenry": MessageLookupByLibrary.simpleMessage("Courtney Henry"),
+    "createANewAssessmentToSeeItHere": MessageLookupByLibrary.simpleMessage(
+      "Tạo đánh giá mới để xem nó ở đây.",
+    ),
     "createAPersonalContentForMe": MessageLookupByLibrary.simpleMessage(
       "Create a personal content for me",
     ),
@@ -629,9 +680,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteConversation": MessageLookupByLibrary.simpleMessage(
       "Delete Conversation",
     ),
+    "deleted": MessageLookupByLibrary.simpleMessage("Đã xoá"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "deliveryMan": MessageLookupByLibrary.simpleMessage("Delivery Man"),
     "delivery_stage": MessageLookupByLibrary.simpleMessage("Xuất"),
+    "demoChip": MessageLookupByLibrary.simpleMessage("DEMO"),
+    "demoModeOff": MessageLookupByLibrary.simpleMessage("Chế độ Demo: TẮT"),
+    "demoModeOn": MessageLookupByLibrary.simpleMessage("Chế độ Demo: BẬT"),
+    "demoModeReset": MessageLookupByLibrary.simpleMessage(
+      "Đã đặt lại chế độ Demo",
+    ),
     "describeAnImageYouWantToGenerate": MessageLookupByLibrary.simpleMessage(
       "Describe an image you want to Generate",
     ),
@@ -652,6 +710,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "devonLane": MessageLookupByLibrary.simpleMessage("Devon Lane"),
     "dianneRussell": MessageLookupByLibrary.simpleMessage("Dianne Russell"),
     "die_profile": MessageLookupByLibrary.simpleMessage("Cấu hình khuôn(mm)"),
+    "differentText": MessageLookupByLibrary.simpleMessage("Khác nhau"),
     "disabledInput": MessageLookupByLibrary.simpleMessage("Disabled Input"),
     "discount": MessageLookupByLibrary.simpleMessage("Discount"),
     "district": MessageLookupByLibrary.simpleMessage("Quận"),
@@ -664,6 +723,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "dolorem sunt corrupti",
     ),
     "doloribuseEtEos": MessageLookupByLibrary.simpleMessage("doloribus et eos"),
+    "done": MessageLookupByLibrary.simpleMessage("Xong"),
+    "downloadAppTitle": MessageLookupByLibrary.simpleMessage("Tải ứng dụng"),
     "downloadFiels": MessageLookupByLibrary.simpleMessage("Download Fiels"),
     "draftNews": MessageLookupByLibrary.simpleMessage("Draft News"),
     "drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
@@ -784,10 +845,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_valid_positive": MessageLookupByLibrary.simpleMessage("Phải > 0"),
     "enterprise": MessageLookupByLibrary.simpleMessage("Enterprise"),
     "entries": MessageLookupByLibrary.simpleMessage("entries"),
-    "err_max_length": m0,
-    "err_max_number": m1,
-    "err_min_length": m2,
-    "err_min_number": m3,
+    "err_max_length": m2,
+    "err_max_number": m3,
+    "err_min_length": m4,
+    "err_min_number": m5,
     "error": MessageLookupByLibrary.simpleMessage("404"),
     "estherHoward": MessageLookupByLibrary.simpleMessage("Esther Howard"),
     "etEaQuis": MessageLookupByLibrary.simpleMessage("et ea quis"),
@@ -805,6 +866,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "exportCSV": MessageLookupByLibrary.simpleMessage("Export CSV"),
     "exportExcel": MessageLookupByLibrary.simpleMessage("Export Excel"),
     "exportPDF": MessageLookupByLibrary.simpleMessage("Export PDF"),
+    "exportPdfFailed": m6,
     "fAQs": MessageLookupByLibrary.simpleMessage("FAQs"),
     "factory_approx_waster_percentage_qty":
         MessageLookupByLibrary.simpleMessage(
@@ -900,7 +962,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "family": MessageLookupByLibrary.simpleMessage("Family"),
     "familyS": MessageLookupByLibrary.simpleMessage("Family\'s"),
     "fanta": MessageLookupByLibrary.simpleMessage("Fanta"),
+    "farmSizeHa": MessageLookupByLibrary.simpleMessage("Diện tích (ha)"),
     "farmer": MessageLookupByLibrary.simpleMessage("Nông dân"),
+    "farmerDefaultName": MessageLookupByLibrary.simpleMessage("Nông dân"),
+    "farmerDesc": MessageLookupByLibrary.simpleMessage(
+      "Theo dõi hoạt động và dữ liệu nông trại.",
+    ),
+    "farmerFileSafeName": MessageLookupByLibrary.simpleMessage("nongdan"),
+    "farmerName": MessageLookupByLibrary.simpleMessage("Tên nông dân"),
     "farmer_id": MessageLookupByLibrary.simpleMessage("Mã nông hộ"),
     "farmer_name": MessageLookupByLibrary.simpleMessage("Tên nông dân"),
     "fashion": MessageLookupByLibrary.simpleMessage("Fashion"),
@@ -914,6 +983,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "fileInput": MessageLookupByLibrary.simpleMessage("File Input"),
     "fileName": MessageLookupByLibrary.simpleMessage("File Name"),
     "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+    "finalScoreCapped": MessageLookupByLibrary.simpleMessage(
+      "Điểm cuối (giới hạn)",
+    ),
     "final_brown_rice_output": MessageLookupByLibrary.simpleMessage(
       "Gạo liệu(kg)",
     ),
@@ -974,6 +1046,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "forms": MessageLookupByLibrary.simpleMessage("Forms"),
     "forward": MessageLookupByLibrary.simpleMessage("Forward"),
     "fourth": MessageLookupByLibrary.simpleMessage("Fourth"),
+    "fpoAdmin": MessageLookupByLibrary.simpleMessage("Quản trị FPO"),
+    "fpoAdminDesc": MessageLookupByLibrary.simpleMessage(
+      "Quản lý thành viên và vận hành.",
+    ),
+    "fpoBenefitsTitle": MessageLookupByLibrary.simpleMessage(
+      "Lợi ích FPO (nâng cao)",
+    ),
+    "fpoBoost": MessageLookupByLibrary.simpleMessage("Cộng điểm FPO"),
+    "fpoMemberHint": MessageLookupByLibrary.simpleMessage(
+      "Bạn là thành viên FPO — điều khoản tốt hơn so với cơ bản.",
+    ),
+    "fpoMemberQuestion": MessageLookupByLibrary.simpleMessage(
+      "Bạn là thành viên FPO?",
+    ),
+    "fpoName": MessageLookupByLibrary.simpleMessage("Tên FPO"),
+    "fpoNonMemberHint": MessageLookupByLibrary.simpleMessage(
+      "Bạn chưa là thành viên FPO — xem lợi ích khi tham gia.",
+    ),
+    "fpoSavingsMember": m7,
+    "fpoSavingsNonMember": m8,
     "free": MessageLookupByLibrary.simpleMessage("Free"),
     "freePlan": MessageLookupByLibrary.simpleMessage("Free Plan"),
     "freeUsers": MessageLookupByLibrary.simpleMessage("Free Users"),
@@ -1055,7 +1147,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "heyThereIm": MessageLookupByLibrary.simpleMessage("Hey there I’m"),
     "high": MessageLookupByLibrary.simpleMessage("High"),
     "highlight": MessageLookupByLibrary.simpleMessage(" highlight "),
+    "history": MessageLookupByLibrary.simpleMessage("Lịch sử"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "homeHeaderSubtitleDemo": MessageLookupByLibrary.simpleMessage(
+      "Chế độ demo: dữ liệu mẫu có sẵn, xem kết quả tức thì.",
+    ),
+    "homeHeaderSubtitleNormal": MessageLookupByLibrary.simpleMessage(
+      "MVP ưu tiên lưu cục bộ. Không cần đăng nhập.",
+    ),
+    "homeHeaderTitle": MessageLookupByLibrary.simpleMessage(
+      "Hiển thị kết quả ngay lập tức",
+    ),
+    "homeHistorySubtitle": MessageLookupByLibrary.simpleMessage(
+      "Xem các đánh giá trước, xuất dữ liệu",
+    ),
+    "homeHistoryTitle": MessageLookupByLibrary.simpleMessage("Lịch sử"),
+    "homeNewAssessment": MessageLookupByLibrary.simpleMessage(
+      "Tạo đánh giá mới",
+    ),
+    "homeStatFarmersSubtitle": m9,
+    "homeStatFarmersTitle": MessageLookupByLibrary.simpleMessage(
+      "Số nông dân đã đánh giá tại Mekong",
+    ),
+    "homeStatYourAssessmentsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Lưu trên thiết bị này",
+    ),
+    "homeStatYourAssessmentsTitle": MessageLookupByLibrary.simpleMessage(
+      "Đánh giá của bạn",
+    ),
+    "homeTitle": MessageLookupByLibrary.simpleMessage("Trang chủ"),
     "horizontalCards": MessageLookupByLibrary.simpleMessage("Horizontal Cards"),
     "hoursAgo": MessageLookupByLibrary.simpleMessage("15 hours ago"),
     "hoverTable": MessageLookupByLibrary.simpleMessage("Hover Table"),
@@ -1081,6 +1201,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Trạng thái xay xát",
     ),
     "husking_stage": MessageLookupByLibrary.simpleMessage("6.Xay xát trấu"),
+    "hybridModelHint": MessageLookupByLibrary.simpleMessage(
+      "Mô hình lai = điểm cơ sở dễ giải thích + điều chỉnh dựa trên dữ liệu.",
+    ),
     "idealForBusinessesWhoNeedPersonalizedServicesAndSecurityForLargeTeams":
         MessageLookupByLibrary.simpleMessage(
           "Ideal for businesses who need personalized services and security for large teams.",
@@ -1179,7 +1302,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Instant Access to our design system",
     ),
     "instructional": MessageLookupByLibrary.simpleMessage("Instructional"),
+    "interestLabel": MessageLookupByLibrary.simpleMessage("Lãi suất"),
     "intermediate": MessageLookupByLibrary.simpleMessage("Intermediate"),
+    "invalidName": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng nhập tên hợp lệ",
+    ),
     "invalid_format": MessageLookupByLibrary.simpleMessage("Sai định dạng"),
     "invalid_phone_e164": MessageLookupByLibrary.simpleMessage(
       "SĐT không hợp lệ (9–15 chữ số, có thể có + ở đầu)",
@@ -1204,6 +1331,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "jennyWilson": MessageLookupByLibrary.simpleMessage("Jenny Wilson"),
     "jeromeBell": MessageLookupByLibrary.simpleMessage("Jerome Bell"),
     "joinDate": MessageLookupByLibrary.simpleMessage("Join Date"),
+    "joinFpoAction": MessageLookupByLibrary.simpleMessage("Tham gia FPO"),
+    "joinFpoActionFallback": MessageLookupByLibrary.simpleMessage(
+      "Tham gia FPO: chuyển tới trang giới thiệu / onboarding",
+    ),
+    "joinFpoEncourage": MessageLookupByLibrary.simpleMessage(
+      "Tham gia FPO để mở khóa lãi suất tốt hơn, hạn mức cao hơn và độ tin cậy lớn hơn.",
+    ),
     "joinYourCompanyPremiumAndExperience": MessageLookupByLibrary.simpleMessage(
       "Join [Your Company] Premium and experience [Product/Service] like never before. Subscribe now to unlock a new level of excellence",
     ),
@@ -1252,6 +1386,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Load More Buttons",
     ),
     "loading": MessageLookupByLibrary.simpleMessage("Loading"),
+    "loanOfficer": MessageLookupByLibrary.simpleMessage("Cán bộ tín dụng"),
+    "loanOfficerDesc": MessageLookupByLibrary.simpleMessage(
+      "Đánh giá và quản lý khoản vay nhanh chóng",
+    ),
     "locationPerformance": MessageLookupByLibrary.simpleMessage(
       "Hiệu suất theo địa điểm",
     ),
@@ -1285,7 +1423,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Hiệu suất máy móc",
     ),
     "machine_id": MessageLookupByLibrary.simpleMessage("Mã máy"),
-    "madeWithFooter": m4,
+    "madeWithFooter": m10,
+    "mainCrop": MessageLookupByLibrary.simpleMessage("Cây trồng chính"),
     "makeUpA5SentenceStoryAboutSharkyAToothBrushingSharkSuperhero":
         MessageLookupByLibrary.simpleMessage(
           "Make up a 5-sentence story about \"Sharky\", a tooth-brushing shark superhero",
@@ -1295,9 +1434,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "maps": MessageLookupByLibrary.simpleMessage("Maps"),
     "marvinMcKinney": MessageLookupByLibrary.simpleMessage("Marvin McKinney"),
     "master": MessageLookupByLibrary.simpleMessage("Master"),
-    "max_decimal_places": m5,
+    "maxAmountLabel": MessageLookupByLibrary.simpleMessage("Hạn mức tối đa"),
+    "max_decimal_places": m11,
     "maximumLength": MessageLookupByLibrary.simpleMessage("Maximum Length"),
     "medium": MessageLookupByLibrary.simpleMessage("Medium"),
+    "mekongRegion": MessageLookupByLibrary.simpleMessage("Khu vực Mekong"),
     "menuSize": MessageLookupByLibrary.simpleMessage("Menu Size"),
     "message": MessageLookupByLibrary.simpleMessage("30 Message"),
     "messageAllOperator": MessageLookupByLibrary.simpleMessage(
@@ -1321,11 +1462,16 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "month": MessageLookupByLibrary.simpleMessage("Month"),
     "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
+    "monthlyDebt": MessageLookupByLibrary.simpleMessage("Nợ hàng tháng"),
     "monthlyExpense": MessageLookupByLibrary.simpleMessage("Monthly Expense"),
+    "monthlyIncome": MessageLookupByLibrary.simpleMessage(
+      "Thu nhập hàng tháng",
+    ),
     "monthlyPlan999Month": MessageLookupByLibrary.simpleMessage(
       "Monthly Plan: \\\$9.99/month",
     ),
     "monthlyValue": MessageLookupByLibrary.simpleMessage("Monthly Value"),
+    "monthsShort": MessageLookupByLibrary.simpleMessage("tháng"),
     "mostViewedNews": MessageLookupByLibrary.simpleMessage("Most Viewed News"),
     "move": MessageLookupByLibrary.simpleMessage("Move"),
     "moveItemFrom": MessageLookupByLibrary.simpleMessage("Move item from"),
@@ -1342,6 +1488,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "needAnAccount": MessageLookupByLibrary.simpleMessage("Need an account?"),
     "net_weight": MessageLookupByLibrary.simpleMessage("Trọng lượng tịnh(kg)"),
     "neutral": MessageLookupByLibrary.simpleMessage("Neutral"),
+    "newAssessment": MessageLookupByLibrary.simpleMessage("Tạo đánh giá mới"),
+    "newAssessmentDemo": MessageLookupByLibrary.simpleMessage(
+      "Tạo đánh giá mới (Demo)",
+    ),
     "newConversation": MessageLookupByLibrary.simpleMessage("New Conversation"),
     "newOrders": MessageLookupByLibrary.simpleMessage("New Orders"),
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
@@ -1350,10 +1500,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "newsReaders": MessageLookupByLibrary.simpleMessage("News Readers"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "nihilPorroEst": MessageLookupByLibrary.simpleMessage("nihil porro est"),
+    "noAssessmentsYet": MessageLookupByLibrary.simpleMessage(
+      "Chưa có đánh giá nào",
+    ),
     "noData": MessageLookupByLibrary.simpleMessage("Không có dữ liệu"),
     "noDataFound": MessageLookupByLibrary.simpleMessage("No data found!"),
     "noInfor": MessageLookupByLibrary.simpleMessage(
       "Không có thông tin, bạn cần phải đăng nhập",
+    ),
+    "noSavingsHint": MessageLookupByLibrary.simpleMessage(
+      "Không có chênh lệch tiết kiệm trong kịch bản demo này.",
+    ),
+    "noVerification": MessageLookupByLibrary.simpleMessage(
+      "Không cần xác minh",
     ),
     "no_data": MessageLookupByLibrary.simpleMessage("Không có dữ liệu"),
     "notSatisfiedWeOfferA30DayMoneyBackGuaranteeNoQuestionsAsked":
@@ -1392,7 +1551,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_title_2": MessageLookupByLibrary.simpleMessage(
       "Quyết định dựa trên AI",
     ),
-    "onboarding_title_3": m6,
+    "onboarding_title_3": m12,
     "one": MessageLookupByLibrary.simpleMessage("One"),
     "openAI": MessageLookupByLibrary.simpleMessage("Open AI"),
     "openAIAdmin": MessageLookupByLibrary.simpleMessage("Open AI Admin"),
@@ -1466,13 +1625,52 @@ class MessageLookup extends MessageLookupByLibrary {
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "paymentStatus": MessageLookupByLibrary.simpleMessage("Payment Status"),
     "paymentType": MessageLookupByLibrary.simpleMessage("Payment Type"),
+    "pdfAddress": MessageLookupByLibrary.simpleMessage("Địa chỉ"),
+    "pdfAi": MessageLookupByLibrary.simpleMessage("AI"),
+    "pdfAiReasoning": MessageLookupByLibrary.simpleMessage("Giải thích của AI"),
+    "pdfBase": MessageLookupByLibrary.simpleMessage("Cơ bản"),
+    "pdfBrandName": MessageLookupByLibrary.simpleMessage(
+      "Đánh giá tín dụng Mekong",
+    ),
+    "pdfFarmSizeHa": MessageLookupByLibrary.simpleMessage("Diện tích (ha)"),
+    "pdfFarmerInformation": MessageLookupByLibrary.simpleMessage(
+      "Thông tin nông hộ",
+    ),
+    "pdfFpo": MessageLookupByLibrary.simpleMessage("FPO"),
+    "pdfGeneratedAt": MessageLookupByLibrary.simpleMessage("Tạo lúc"),
+    "pdfInterest": MessageLookupByLibrary.simpleMessage("Lãi suất"),
+    "pdfMainCrop": MessageLookupByLibrary.simpleMessage("Cây trồng chính"),
+    "pdfMaxAmount": MessageLookupByLibrary.simpleMessage("Hạn mức tối đa"),
+    "pdfName": MessageLookupByLibrary.simpleMessage("Họ tên"),
+    "pdfNote": MessageLookupByLibrary.simpleMessage(
+      "Lưu ý: Báo cáo dùng cho demo/MVP và cần được cán bộ tín dụng thẩm định.",
+    ),
+    "pdfPhone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+    "pdfProvinceDistrict": MessageLookupByLibrary.simpleMessage("Tỉnh / Huyện"),
+    "pdfRecommendedLoanTerms": MessageLookupByLibrary.simpleMessage(
+      "Điều khoản vay đề xuất",
+    ),
+    "pdfRepayment": MessageLookupByLibrary.simpleMessage("Trả nợ"),
+    "pdfReportSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Báo cáo chia sẻ được, tạo cục bộ, sinh bởi chấm điểm AI.",
+    ),
+    "pdfReportTitle": MessageLookupByLibrary.simpleMessage(
+      "Báo cáo đánh giá tín dụng",
+    ),
+    "pdfRiskScore": MessageLookupByLibrary.simpleMessage("Điểm rủi ro"),
+    "pdfScore": MessageLookupByLibrary.simpleMessage("Điểm"),
+    "pdfTenure": MessageLookupByLibrary.simpleMessage("Kỳ hạn"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "pendingOrder": MessageLookupByLibrary.simpleMessage("Pending Order"),
     "pendingWithdraw": MessageLookupByLibrary.simpleMessage("Pending Withdraw"),
+    "perYearShort": MessageLookupByLibrary.simpleMessage("năm"),
     "personal": MessageLookupByLibrary.simpleMessage("Personal"),
     "persuasive": MessageLookupByLibrary.simpleMessage("Persuasive"),
     "phone": MessageLookupByLibrary.simpleMessage("Phone"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "phoneOptional": MessageLookupByLibrary.simpleMessage(
+      "Số điện thoại (không bắt buộc)",
+    ),
     "photo": MessageLookupByLibrary.simpleMessage("Hình ảnh"),
     "photo_invoice": MessageLookupByLibrary.simpleMessage("Hình hoá đơn"),
     "photo_of_id_of_vehicle_driver": MessageLookupByLibrary.simpleMessage(
@@ -1566,6 +1764,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "premix_added": MessageLookupByLibrary.simpleMessage("HH thêm vào(kg)"),
     "present": MessageLookupByLibrary.simpleMessage("Present"),
+    "previewShareImageTitle": MessageLookupByLibrary.simpleMessage(
+      "Xem trước ảnh chia sẻ",
+    ),
     "previous": MessageLookupByLibrary.simpleMessage("Previous"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "priceRange": MessageLookupByLibrary.simpleMessage("Price Range"),
@@ -1596,6 +1797,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "proficient": MessageLookupByLibrary.simpleMessage("Proficient"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileHint": MessageLookupByLibrary.simpleMessage(
+      "Chỉ mất khoảng 10 giây. Chỉ lưu trữ trên thiết bị.",
+    ),
     "profilePicture": MessageLookupByLibrary.simpleMessage("Profile Picture"),
     "profit": MessageLookupByLibrary.simpleMessage("Lợi nhuận"),
     "profit_margin_percent": MessageLookupByLibrary.simpleMessage(
@@ -1645,6 +1849,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "quiaNecessitatibusMolestiae": MessageLookupByLibrary.simpleMessage(
       "quia necessitatibus molestiae",
     ),
+    "quickProfile": MessageLookupByLibrary.simpleMessage("Hồ sơ nhanh"),
     "quizName": MessageLookupByLibrary.simpleMessage("Quiz Name"),
     "quotation": MessageLookupByLibrary.simpleMessage("Quotation"),
     "ralphEdwards": MessageLookupByLibrary.simpleMessage("Ralph Edwards"),
@@ -1665,6 +1870,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Recent Registered Influencer",
     ),
     "recentSales": MessageLookupByLibrary.simpleMessage("Recent Sales"),
+    "recommendedLoanTermsTitle": MessageLookupByLibrary.simpleMessage(
+      "Điều khoản vay đề xuất",
+    ),
     "red_yellow_kernels": MessageLookupByLibrary.simpleMessage(
       "Hạt biến đỏ/vàng (%)",
     ),
@@ -1687,6 +1895,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "religion": MessageLookupByLibrary.simpleMessage("Religion"),
     "remaining_qty": MessageLookupByLibrary.simpleMessage("Lượng còn lại(kg)"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
+    "repaymentHistory": MessageLookupByLibrary.simpleMessage("Lịch sử trả nợ"),
+    "repaymentLabel": MessageLookupByLibrary.simpleMessage("Lịch trả"),
     "repellendusEumEveniet": MessageLookupByLibrary.simpleMessage(
       "repellendus eum eveniet",
     ),
@@ -1697,6 +1907,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "rerum sint aliquid",
     ),
     "reset": MessageLookupByLibrary.simpleMessage("Đặt lại"),
+    "resetDemoData": MessageLookupByLibrary.simpleMessage(
+      "Đặt lại dữ liệu demo",
+    ),
+    "resetDemoMode": MessageLookupByLibrary.simpleMessage(
+      "Đặt lại chế độ Demo",
+    ),
+    "results": MessageLookupByLibrary.simpleMessage("Kết quả"),
     "revenue": MessageLookupByLibrary.simpleMessage("Revenue"),
     "review": MessageLookupByLibrary.simpleMessage("Review"),
     "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
@@ -1709,6 +1926,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "rice_type": MessageLookupByLibrary.simpleMessage("Loại gạo"),
     "riskFreeSatisfactionGuaranteed": MessageLookupByLibrary.simpleMessage(
       "Risk-Free Satisfaction Guaranteed",
+    ),
+    "roleInFpoOptional": MessageLookupByLibrary.simpleMessage(
+      "Vai trò trong FPO (không bắt buộc)",
     ),
     "rounded": MessageLookupByLibrary.simpleMessage("Rounded"),
     "roundedInput": MessageLookupByLibrary.simpleMessage("Rounded Input"),
@@ -1730,15 +1950,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "salesOverview": MessageLookupByLibrary.simpleMessage("Sales Overview"),
     "salesPrice": MessageLookupByLibrary.simpleMessage("Sales Price"),
     "salesRatio": MessageLookupByLibrary.simpleMessage("Sales Ratio"),
+    "sameText": MessageLookupByLibrary.simpleMessage("Giống nhau"),
     "samsung": MessageLookupByLibrary.simpleMessage("Samsung"),
     "savannahNguyen": MessageLookupByLibrary.simpleMessage("Savannah Nguyen"),
     "save": MessageLookupByLibrary.simpleMessage("Lưu"),
     "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "saveFrom": MessageLookupByLibrary.simpleMessage("Save From"),
+    "savedLocalComingSoon": MessageLookupByLibrary.simpleMessage("Đã lưu"),
+    "savingDraft": MessageLookupByLibrary.simpleMessage("Đang lưu bản nháp…"),
     "scanSearchProductByCodeOrName": MessageLookupByLibrary.simpleMessage(
       "Scan / search product by code or name",
     ),
     "science": MessageLookupByLibrary.simpleMessage("Science"),
+    "score": MessageLookupByLibrary.simpleMessage("Điểm"),
+    "scoreBreakdownTitle": MessageLookupByLibrary.simpleMessage(
+      "Phân rã điểm số",
+    ),
     "screw_rpm": MessageLookupByLibrary.simpleMessage("Vòng/phút của vít"),
     "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
     "searchProductByName": MessageLookupByLibrary.simpleMessage(
@@ -1746,6 +1973,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "second": MessageLookupByLibrary.simpleMessage("Second"),
     "secondary": MessageLookupByLibrary.simpleMessage("Secondary"),
+    "sectionFarm": MessageLookupByLibrary.simpleMessage("Thông tin nông trại"),
+    "sectionFinancial": MessageLookupByLibrary.simpleMessage("Tài chính"),
+    "sectionFpo": MessageLookupByLibrary.simpleMessage("FPO"),
+    "sectionPersonal": MessageLookupByLibrary.simpleMessage(
+      "Thông tin cá nhân",
+    ),
     "seeDetail": MessageLookupByLibrary.simpleMessage("Xem chi tiết"),
     "seiving_rice": MessageLookupByLibrary.simpleMessage("Tổng gạo Sevied(kg)"),
     "seiving_stage": MessageLookupByLibrary.simpleMessage("10.Sàng lọc"),
@@ -1769,6 +2002,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectItems": MessageLookupByLibrary.simpleMessage("Select Items"),
     "selectOne": MessageLookupByLibrary.simpleMessage("Select One"),
     "selectPosition": MessageLookupByLibrary.simpleMessage("Select Position"),
+    "selectRepaymentHistory": MessageLookupByLibrary.simpleMessage(
+      "Chọn lịch sử trả nợ",
+    ),
     "selectSize": MessageLookupByLibrary.simpleMessage("Select Size"),
     "selectStartDate": MessageLookupByLibrary.simpleMessage(
       "Select start Date",
@@ -1780,6 +2016,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectWarehouse": MessageLookupByLibrary.simpleMessage("Select Warehouse"),
     "selectYouStatus": MessageLookupByLibrary.simpleMessage(
       "Select you status",
+    ),
+    "selectYourRole": MessageLookupByLibrary.simpleMessage(
+      "Chọn vai trò của bạn",
     ),
     "send": MessageLookupByLibrary.simpleMessage("Send"),
     "senior": MessageLookupByLibrary.simpleMessage("Senior"),
@@ -1798,6 +2037,33 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shapesStyles": MessageLookupByLibrary.simpleMessage("Shapes Styles"),
+    "share": MessageLookupByLibrary.simpleMessage("Chia sẻ"),
+    "shareAiModelVersion": MessageLookupByLibrary.simpleMessage(
+      "🧠 Mô hình AI v1.3",
+    ),
+    "shareBrandName": MessageLookupByLibrary.simpleMessage(
+      "Đánh giá tín dụng Mekong",
+    ),
+    "shareCtaSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Quét mã QR để tải ứng dụng.",
+    ),
+    "shareCtaTitle": MessageLookupByLibrary.simpleMessage(
+      "Tôi vừa đánh giá tín dụng nông trại bằng AI!",
+    ),
+    "shareHeadline": MessageLookupByLibrary.simpleMessage(
+      "Kết quả đánh giá tín dụng",
+    ),
+    "shareImageCaption": MessageLookupByLibrary.simpleMessage(
+      "Tôi vừa đánh giá tín dụng nông trại bằng AI!",
+    ),
+    "shareImageFailed": m13,
+    "shareImageSocial": MessageLookupByLibrary.simpleMessage(
+      "Chia sẻ ảnh (mạng xã hội)",
+    ),
+    "shareMetaLine": m14,
+    "sharePdfReport": MessageLookupByLibrary.simpleMessage(
+      "Chia sẻ báo cáo PDF",
+    ),
     "sharePercent": MessageLookupByLibrary.simpleMessage("Tỷ lệ đóng góp (%)"),
     "shipped": MessageLookupByLibrary.simpleMessage("Shipped"),
     "shipper_id": MessageLookupByLibrary.simpleMessage("ID"),
@@ -2089,7 +2355,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "taste_profile": MessageLookupByLibrary.simpleMessage("Hương vị"),
     "tax": MessageLookupByLibrary.simpleMessage("Tax"),
     "technology": MessageLookupByLibrary.simpleMessage("Technology"),
+    "tellUsAboutYou": MessageLookupByLibrary.simpleMessage(
+      "Hãy cho chúng tôi biết về bạn",
+    ),
     "template": MessageLookupByLibrary.simpleMessage("Template"),
+    "tenureLabel": MessageLookupByLibrary.simpleMessage("Kỳ hạn"),
     "termsConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",
     ),
@@ -2193,6 +2463,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "todayIncome": MessageLookupByLibrary.simpleMessage("Today Income"),
     "todayPresent": MessageLookupByLibrary.simpleMessage("Today Present"),
     "todaySendSMS": MessageLookupByLibrary.simpleMessage("12 Today Send SMS"),
+    "toggleYesNo": MessageLookupByLibrary.simpleMessage("Chọn Có/Không"),
     "toneOfVoice": MessageLookupByLibrary.simpleMessage("Tone of Voice"),
     "top5PurchasingProduct": MessageLookupByLibrary.simpleMessage(
       "Top 5 Purchasing Product",
@@ -2382,6 +2653,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "view": MessageLookupByLibrary.simpleMessage("Xem"),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
     "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
+    "viewHistory": MessageLookupByLibrary.simpleMessage("Xem lịch sử"),
     "viewed": MessageLookupByLibrary.simpleMessage("Viewed"),
     "visitsByDay": MessageLookupByLibrary.simpleMessage("Visits By Day"),
     "vitamin_b12": MessageLookupByLibrary.simpleMessage("Vitamin B12"),
@@ -2453,6 +2725,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "What should I do if I encounter technical issues?",
         ),
+    "whatsYourName": MessageLookupByLibrary.simpleMessage("Tên của bạn là gì?"),
     "whimsicalWeddingGraphicsToDesignYour":
         MessageLookupByLibrary.simpleMessage(
           "Whimsical Wedding Graphics to Design Your",
@@ -2461,9 +2734,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "white_rice_output": MessageLookupByLibrary.simpleMessage(
       "Sản lượng gạo trắng (kg)",
     ),
+    "whoAreYou": MessageLookupByLibrary.simpleMessage("Bạn là ai?"),
     "widgets": MessageLookupByLibrary.simpleMessage("Widgets"),
+    "withFpo": MessageLookupByLibrary.simpleMessage("Có FPO"),
     "withdraw": MessageLookupByLibrary.simpleMessage("Withdraw"),
     "withdrawReport": MessageLookupByLibrary.simpleMessage("Withdraw Report"),
+    "withoutFpo": MessageLookupByLibrary.simpleMessage("Không FPO"),
     "womanBag": MessageLookupByLibrary.simpleMessage("Woman Bag"),
     "womanDress": MessageLookupByLibrary.simpleMessage("Woman Dress"),
     "wordGenerated": MessageLookupByLibrary.simpleMessage("Word Generated"),
