@@ -13,6 +13,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart' as rf;
 import 'package:app_mobile/presentation/widgets/responsive_list_or_table/responsive_grid.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 // 🌎 Project imports:
@@ -34,10 +35,10 @@ Future<void> main() async {
 
   await SharedPreferencesProvider.instance.init();
 
-  // if (kDebugMode) {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   await prefs.clear();
-  // }
+  if (kDebugMode) {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+  }
   
   ResponsiveGridBreakpoints.value = ResponsiveGridBreakpoints(
     sm: 576,

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:app_mobile/domain/services/network_service.dart';
-import 'package:app_mobile/presentation/pages/assessment/services/api_assessment.dart';
-import 'package:app_mobile/presentation/pages/assessment/services/assessment_local_store.dart';
+import 'package:app_mobile/presentation/api_service/api_assessment.dart';
+import 'package:app_mobile/presentation/api_service/assessment_local_store.dart';
 import 'package:app_mobile/presentation/pages/demo/demo_mode_store.dart';
 
 class SubmissionSyncService {

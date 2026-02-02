@@ -1,10 +1,11 @@
 import 'package:app_mobile/presentation/pages/home/widgets/ai_model_badge.dart';
+import 'package:app_mobile/presentation/pages/home/widgets/user_profile_tile.dart';
 import 'package:app_mobile/presentation/widgets/button/language_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import 'controller/home_controller.dart';
+import '../../controller/home_controller.dart';
 import 'widgets/home_header_card.dart';
 import 'widgets/stat_card.dart';
 import 'widgets/action_tile.dart';
@@ -113,6 +114,8 @@ class _ViewState extends State<_View> {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
               children: [
+                const UserProfileTile(),
+                const SizedBox(height: 12),
                 HomeHeaderCard(
                   accent: accent,
                   title: lang.homeHeaderTitle,

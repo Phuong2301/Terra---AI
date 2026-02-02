@@ -1,4 +1,4 @@
-import 'package:app_mobile/presentation/pages/ai/model/ai_model_stats.dart';
+import 'package:app_mobile/presentation/model/ai_model_stats.dart';
 import 'package:flutter/material.dart';
 
 class AiModelBadge extends StatelessWidget {

@@ -12959,6 +12959,176 @@ class S {
       args: [],
     );
   }
+
+  /// `FPO track record`
+  String get fpoTrackRecord {
+    return Intl.message(
+      'FPO track record',
+      name: 'fpoTrackRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select track record`
+  String get selectFpoTrackRecord {
+    return Intl.message(
+      'Select track record',
+      name: 'selectFpoTrackRecord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Years in business`
+  String get businessYears {
+    return Intl.message(
+      'Years in business',
+      name: 'businessYears',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seasonal income`
+  String get seasonalIncome {
+    return Intl.message(
+      'Seasonal income',
+      name: 'seasonalIncome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Excellent`
+  String get excellent {
+    return Intl.message('Excellent', name: 'excellent', desc: '', args: []);
+  }
+
+  /// `Good`
+  String get good {
+    return Intl.message('Good', name: 'good', desc: '', args: []);
+  }
+
+  /// `Fair`
+  String get fair {
+    return Intl.message('Fair', name: 'fair', desc: '', args: []);
+  }
+
+  /// `Poor`
+  String get poor {
+    return Intl.message('Poor', name: 'poor', desc: '', args: []);
+  }
+
+  /// `None`
+  String get none {
+    return Intl.message('None', name: 'none', desc: '', args: []);
+  }
+
+  /// `User information`
+  String get profileEditTitle {
+    return Intl.message(
+      'User information',
+      name: 'profileEditTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Role`
+  String get profileRoleLabel {
+    return Intl.message('Role', name: 'profileRoleLabel', desc: '', args: []);
+  }
+
+  /// `Full name`
+  String get profileNameLabel {
+    return Intl.message(
+      'Full name',
+      name: 'profileNameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get profilePhoneLabel {
+    return Intl.message(
+      'Phone number',
+      name: 'profilePhoneLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a role`
+  String get profileRoleRequired {
+    return Intl.message(
+      'Please select a role',
+      name: 'profileRoleRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your full name`
+  String get profileNameRequired {
+    return Intl.message(
+      'Please enter your full name',
+      name: 'profileNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name is too short`
+  String get profileNameTooShort {
+    return Intl.message(
+      'Name is too short',
+      name: 'profileNameTooShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Role not set`
+  String get profileRoleNotSet {
+    return Intl.message(
+      'Role not set',
+      name: 'profileRoleNotSet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name not set`
+  String get profileNameNotSet {
+    return Intl.message(
+      'Name not set',
+      name: 'profileNameNotSet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loan Officer`
+  String get roleLoanOfficer {
+    return Intl.message(
+      'Loan Officer',
+      name: 'roleLoanOfficer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Farmer`
+  String get roleFarmer {
+    return Intl.message('Farmer', name: 'roleFarmer', desc: '', args: []);
+  }
+
+  /// `FPO Admin`
+  String get roleFpoAdmin {
+    return Intl.message('FPO Admin', name: 'roleFpoAdmin', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

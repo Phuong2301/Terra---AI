@@ -472,6 +472,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Business Dashboard",
     ),
     "businessIdeas": MessageLookupByLibrary.simpleMessage("Business Ideas"),
+    "businessYears": MessageLookupByLibrary.simpleMessage("Years in business"),
     "business_location": MessageLookupByLibrary.simpleMessage(
       "Business Location",
     ),
@@ -849,6 +850,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "exHF5gJ7": MessageLookupByLibrary.simpleMessage("Ex: HF5gJ7"),
     "exOutOfLimit": MessageLookupByLibrary.simpleMessage("Ex: out of limit"),
     "exampleTextarea": MessageLookupByLibrary.simpleMessage("Example Textarea"),
+    "excellent": MessageLookupByLibrary.simpleMessage("Excellent"),
     "excited": MessageLookupByLibrary.simpleMessage("Excited"),
     "existing_stock": MessageLookupByLibrary.simpleMessage("Existing stock"),
     "exitEmployee": MessageLookupByLibrary.simpleMessage("Exit Employee"),
@@ -942,6 +944,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "factory_uom": MessageLookupByLibrary.simpleMessage("UOM"),
     "failed": MessageLookupByLibrary.simpleMessage("Failed"),
+    "fair": MessageLookupByLibrary.simpleMessage("Fair"),
     "family": MessageLookupByLibrary.simpleMessage("Family"),
     "familyS": MessageLookupByLibrary.simpleMessage("Family\'s"),
     "fanta": MessageLookupByLibrary.simpleMessage("Fanta"),
@@ -1045,6 +1048,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fpoSavingsMember": m7,
     "fpoSavingsNonMember": m8,
+    "fpoTrackRecord": MessageLookupByLibrary.simpleMessage("FPO track record"),
     "free": MessageLookupByLibrary.simpleMessage("Free"),
     "freePlan": MessageLookupByLibrary.simpleMessage("Free Plan"),
     "freeUsers": MessageLookupByLibrary.simpleMessage("Free Users"),
@@ -1103,6 +1107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "getStartedNow": MessageLookupByLibrary.simpleMessage("Get Started Now"),
     "ghostButtons": MessageLookupByLibrary.simpleMessage("Ghost Buttons"),
     "goBack": MessageLookupByLibrary.simpleMessage("Go Back"),
+    "good": MessageLookupByLibrary.simpleMessage("Good"),
     "googleMap": MessageLookupByLibrary.simpleMessage("Google Map"),
     "governingLaw": MessageLookupByLibrary.simpleMessage("Governing Law"),
     "grain_appearance_color": MessageLookupByLibrary.simpleMessage(
@@ -1495,6 +1500,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "noVerification": MessageLookupByLibrary.simpleMessage("No verification"),
     "no_data": MessageLookupByLibrary.simpleMessage("No data"),
+    "none": MessageLookupByLibrary.simpleMessage("None"),
     "notSatisfiedWeOfferA30DayMoneyBackGuaranteeNoQuestionsAsked":
         MessageLookupByLibrary.simpleMessage(
           "Not satisfied? We offer a 30-day money-back guarantee. No questions asked",
@@ -1731,6 +1737,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "polishing_stage": MessageLookupByLibrary.simpleMessage("9.Polishing"),
     "politics": MessageLookupByLibrary.simpleMessage("Politics"),
+    "poor": MessageLookupByLibrary.simpleMessage("Poor"),
     "position": MessageLookupByLibrary.simpleMessage("Position"),
     "potato": MessageLookupByLibrary.simpleMessage("Potato"),
     "powerful": MessageLookupByLibrary.simpleMessage("Powerful"),
@@ -1785,10 +1792,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "proficient": MessageLookupByLibrary.simpleMessage("Proficient"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileEditTitle": MessageLookupByLibrary.simpleMessage(
+      "User information",
+    ),
     "profileHint": MessageLookupByLibrary.simpleMessage(
       "Takes about 10 seconds. Stored locally only.",
     ),
+    "profileNameLabel": MessageLookupByLibrary.simpleMessage("Full name"),
+    "profileNameNotSet": MessageLookupByLibrary.simpleMessage("Name not set"),
+    "profileNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Please enter your full name",
+    ),
+    "profileNameTooShort": MessageLookupByLibrary.simpleMessage(
+      "Name is too short",
+    ),
+    "profilePhoneLabel": MessageLookupByLibrary.simpleMessage("Phone number"),
     "profilePicture": MessageLookupByLibrary.simpleMessage("Profile Picture"),
+    "profileRoleLabel": MessageLookupByLibrary.simpleMessage("Role"),
+    "profileRoleNotSet": MessageLookupByLibrary.simpleMessage("Role not set"),
+    "profileRoleRequired": MessageLookupByLibrary.simpleMessage(
+      "Please select a role",
+    ),
     "profit": MessageLookupByLibrary.simpleMessage("Profit"),
     "profit_margin_percent": MessageLookupByLibrary.simpleMessage(
       "Profit margin (%)",
@@ -1913,9 +1937,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "riskFreeSatisfactionGuaranteed": MessageLookupByLibrary.simpleMessage(
       "Risk-Free Satisfaction Guaranteed",
     ),
+    "roleFarmer": MessageLookupByLibrary.simpleMessage("Farmer"),
+    "roleFpoAdmin": MessageLookupByLibrary.simpleMessage("FPO Admin"),
     "roleInFpoOptional": MessageLookupByLibrary.simpleMessage(
       "Role in FPO (optional)",
     ),
+    "roleLoanOfficer": MessageLookupByLibrary.simpleMessage("Loan Officer"),
     "rounded": MessageLookupByLibrary.simpleMessage("Rounded"),
     "roundedInput": MessageLookupByLibrary.simpleMessage("Rounded Input"),
     "runningOrder": MessageLookupByLibrary.simpleMessage("Running Order"),
@@ -1959,6 +1986,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchProductByName": MessageLookupByLibrary.simpleMessage(
       "Search product by name",
     ),
+    "seasonalIncome": MessageLookupByLibrary.simpleMessage("Seasonal income"),
     "second": MessageLookupByLibrary.simpleMessage("Second"),
     "secondary": MessageLookupByLibrary.simpleMessage("Secondary"),
     "sectionFarm": MessageLookupByLibrary.simpleMessage("Farm"),
@@ -1985,6 +2013,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectEmployee": MessageLookupByLibrary.simpleMessage("Select Employee"),
     "selectEndDate": MessageLookupByLibrary.simpleMessage("Select end date"),
     "selectEndTime": MessageLookupByLibrary.simpleMessage("Select end time"),
+    "selectFpoTrackRecord": MessageLookupByLibrary.simpleMessage(
+      "Select track record",
+    ),
     "selectItems": MessageLookupByLibrary.simpleMessage("Select Items"),
     "selectOne": MessageLookupByLibrary.simpleMessage("Select One"),
     "selectPosition": MessageLookupByLibrary.simpleMessage("Select Position"),

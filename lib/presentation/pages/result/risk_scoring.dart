@@ -49,7 +49,7 @@ class RiskScoringEngine {
 
     final repayment = (payload['repaymentHistory'] ?? 'None').toString();
     final income = _toDouble(payload['monthlyIncome']);
-    final debt = _toDouble(payload['monthlyDebt']);
+    final debt = _toDouble(payload['monthlyDebtPayment'] ?? payload['monthlyDebt']);
     final isFpo = (payload['isFpoMember'] ?? false) == true;
 
     final repayPoints = _repaymentPoints(repayment);

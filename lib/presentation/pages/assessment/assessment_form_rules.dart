@@ -23,3 +23,9 @@ final kMoneyRules = <Rule<String?>>[
   V.nonNegative(),
   V.maxDecimalPlaces(2),
 ];
+
+final kBusinessYearsRules = <Rule<String?>>[
+  V.required(),
+  V.number(), 
+  V.nonNegative(),
+];

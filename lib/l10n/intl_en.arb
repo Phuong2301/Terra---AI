@@ -1729,5 +1729,28 @@
   "pdfInterest": "Interest",
   "pdfTenure": "Tenure",
   "pdfRepayment": "Repayment",
-  "pdfNote": "Note: This report is generated for demo/MVP purposes and should be validated by a credit officer."
+  "pdfNote": "Note: This report is generated for demo/MVP purposes and should be validated by a credit officer.",
+  "fpoTrackRecord": "FPO track record",
+  "selectFpoTrackRecord": "Select track record",
+  "businessYears": "Years in business",
+  "seasonalIncome": "Seasonal income",
+  "excellent": "Excellent",
+  "good": "Good",
+  "fair": "Fair",
+  "poor": "Poor",
+  "none": "None",
+  "profileEditTitle": "User information",
+  "profileRoleLabel": "Role",
+  "profileNameLabel": "Full name",
+  "profilePhoneLabel": "Phone number",
+
+  "profileRoleRequired": "Please select a role",
+  "profileNameRequired": "Please enter your full name",
+  "profileNameTooShort": "Name is too short",
+
+  "profileRoleNotSet": "Role not set",
+  "profileNameNotSet": "Name not set",
+  "roleLoanOfficer": "Loan Officer",
+  "roleFarmer": "Farmer",
+  "roleFpoAdmin": "FPO Admin"
 }

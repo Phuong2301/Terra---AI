@@ -1,4 +1,4 @@
-import 'package:app_mobile/presentation/pages/assessment/controller/assessment_form_controller.dart';
+import 'package:app_mobile/presentation/controller/assessment_form_controller.dart';
 import 'package:app_mobile/presentation/widgets/input_field/input_select.dart';
 import 'package:app_mobile/presentation/widgets/input_field/input_text.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +33,25 @@ class _View extends StatelessWidget {
 
     return Consumer<AssessmentFormController>(
       builder: (context, c, _) {
+        final repayLabels = <String>[
+          t.excellent,
+          t.good,
+          t.fair,
+          t.poor,
+          t.none,
+        ];
+        final trackValues = AssessmentFormController.fpoTrackRecordItems;
+        final trackLabels = <String>[
+          t.excellent,
+          t.good,
+          t.fair,
+          t.poor,
+          t.none,
+        ];
+        final trackIndex = (() {
+          final idx = trackValues.indexOf(c.fpoTrackRecord);
+          return (idx >= 0 ? idx : 1).toString(); // default GOOD
+        })();
         return Scaffold(
           backgroundColor: cs.background,
           appBar: AppBar(
@@ -150,13 +169,29 @@ class _View extends StatelessWidget {
                             title: t.sectionFinancial,
                             child: Column(
                               children: [
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.businessYears, 
+                                  controller: c.businessYearsCtrl,
+                                  keyboardType: TextInputType.number,
+                                  rules: kBusinessYearsRules,
+                                  required: true,
+                                ),
                                 InputSelect(
                                   label: t.repaymentHistory,
                                   hintText: t.selectRepaymentHistory,
-                                  items: AssessmentFormController.repaymentItems,
+                                  items: repayLabels, 
                                   index: c.repaymentIndex,
                                   required: true,
-                                  onChange: c.setRepaymentIndex,
+                                  onChange: c.setRepaymentIndex, 
+                                ),
+                                const SizedBox(height: 20),
+                                InputText(
+                                  label: t.seasonalIncome,
+                                  controller: c.seasonalIncomeCtrl,
+                                  keyboardType: TextInputType.number,
+                                  rules: kMoneyRules,
+                                  required: true,
                                 ),
                                 const SizedBox(height: 20),
                                 InputText(
@@ -203,6 +238,19 @@ class _View extends StatelessWidget {
                                   InputText(
                                     label: t.roleInFpoOptional,
                                     controller: c.fpoRoleCtrl,
+                                  ),
+                                  const SizedBox(height: 20),
+                                  InputSelect(
+                                    label: t.fpoTrackRecord,
+                                    hintText: t.selectFpoTrackRecord,
+                                    items: trackLabels, // HIỂN THỊ THEO NGÔN NGỮ
+                                    index: trackIndex,
+                                    required: true,
+                                    onChange: (val) {
+                                      final i = int.tryParse(val ?? '');
+                                      if (i == null || i < 0 || i >= trackValues.length) return;
+                                      c.setFpoTrackRecord(trackValues[i]); // vẫn lưu value enum
+                                    },
                                   ),
                                 ],
                               ],

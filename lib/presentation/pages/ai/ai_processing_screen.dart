@@ -12,12 +12,14 @@ class AiProcessingScreen extends StatefulWidget {
     required this.duration,
     required this.nextRoutePath,
     this.payload,
+    this.submitFuture,
   });
 
   final int farmersCount;
   final Duration duration;
   final String nextRoutePath;
   final Map<String, dynamic>? payload;
+  final Future<Map<String, dynamic>>? submitFuture;
 
   @override
   State<AiProcessingScreen> createState() => _AiProcessingScreenState();
@@ -29,7 +31,6 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
   Timer? _t1;
   Timer? _t2;
   Timer? _t3;
-  Timer? _done;
 
   bool _step1 = false;
   bool _step2 = false;
@@ -62,10 +63,26 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
       setState(() => _step3 = true);
     });
 
-    _done = Timer(Duration(milliseconds: totalMs), () {
-      if (!mounted) return;
-      context.go(widget.nextRoutePath, extra: widget.payload);
-    });
+    _startNavigation(totalMs);
+  }
+  Future<void> _startNavigation(int totalMs) async {
+    final minDelay = Future.delayed(Duration(milliseconds: totalMs));
+    Map<String, dynamic>? finalPayload = widget.payload;
+
+    final submit = widget.submitFuture;
+    if (submit != null) {
+      try {
+        final res = await submit;
+        finalPayload = (res as Map).cast<String, dynamic>(); // ✅ đảm bảo Map<String,dynamic>
+      } catch (_) {
+        // fallback giữ widget.payload
+      }
+    }
+
+    await minDelay;
+    if (!mounted) return;
+
+    context.go(widget.nextRoutePath, extra: finalPayload);
   }
 
   @override
@@ -74,7 +91,6 @@ class _AiProcessingScreenState extends State<AiProcessingScreen>
     _t1?.cancel();
     _t2?.cancel();
     _t3?.cancel();
-    _done?.cancel();
     super.dispose();
   }
 

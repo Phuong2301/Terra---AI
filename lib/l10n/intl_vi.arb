@@ -1729,5 +1729,28 @@
   "pdfInterest": "Lãi suất",
   "pdfTenure": "Kỳ hạn",
   "pdfRepayment": "Trả nợ",
-  "pdfNote": "Lưu ý: Báo cáo dùng cho demo/MVP và cần được cán bộ tín dụng thẩm định."
+  "pdfNote": "Lưu ý: Báo cáo dùng cho demo/MVP và cần được cán bộ tín dụng thẩm định.",
+  "fpoTrackRecord": "Lịch sử hoạt động của FPO",
+  "selectFpoTrackRecord": "Chọn lịch sử hoạt động",
+  "businessYears": "Số năm hoạt động",
+  "seasonalIncome": "Thu nhập theo mùa",
+  "excellent": "Rất tốt",
+  "good": "Tốt",
+  "fair": "Trung bình",
+  "poor": "Kém",
+  "none": "Không có",
+  "profileEditTitle": "Thông tin người dùng",
+  "profileRoleLabel": "Vai trò",
+  "profileNameLabel": "Họ tên",
+  "profilePhoneLabel": "Số điện thoại",
+
+  "profileRoleRequired": "Vui lòng chọn vai trò",
+  "profileNameRequired": "Vui lòng nhập họ tên",
+  "profileNameTooShort": "Họ tên quá ngắn",
+
+  "profileRoleNotSet": "Chưa chọn vai trò",
+  "profileNameNotSet": "Chưa đặt tên",
+  "roleLoanOfficer": "Cán bộ tín dụng",
+  "roleFarmer": "Nông dân",
+  "roleFpoAdmin": "Quản trị FPO"
 }

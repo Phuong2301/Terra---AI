@@ -164,7 +164,8 @@ abstract class AcnooAppRoutes {
                 farmersCount: (extra?['farmersCount'] as int?) ?? 127,
                 duration: extra?['duration'] as Duration? ?? const Duration(seconds: 7),
                 nextRoutePath: (extra?['nextRoutePath'] as String?) ?? '/results',
-                payload: extra?['payload'] as Map<String, dynamic>?,
+                payload: (extra?['payload'] as Map?)?.cast<String, dynamic>(),
+                submitFuture: extra?['submitFuture'] as Future<Map<String, dynamic>>?,
               ),
             );
           },
@@ -172,10 +173,8 @@ abstract class AcnooAppRoutes {
         GoRoute(
           path: '/results',
           pageBuilder: (context, state) {
-            final payload = state.extra as Map<String, dynamic>?;
-            return NoTransitionPage(
-              child: ResultsScreen(payload: payload),
-            );
+            final payload = (state.extra as Map?)?.cast<String, dynamic>();
+            return NoTransitionPage(child: ResultsScreen(payload: payload));
           },
         ),
         GoRoute(

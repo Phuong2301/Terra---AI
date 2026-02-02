@@ -475,6 +475,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Business Dashboard",
     ),
     "businessIdeas": MessageLookupByLibrary.simpleMessage("Business Ideas"),
+    "businessYears": MessageLookupByLibrary.simpleMessage("Số năm hoạt động"),
     "business_location": MessageLookupByLibrary.simpleMessage(
       "Vị trí kinh doanh",
     ),
@@ -856,6 +857,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "exHF5gJ7": MessageLookupByLibrary.simpleMessage("Ex: HF5gJ7"),
     "exOutOfLimit": MessageLookupByLibrary.simpleMessage("Ex: out of limit"),
     "exampleTextarea": MessageLookupByLibrary.simpleMessage("Example Textarea"),
+    "excellent": MessageLookupByLibrary.simpleMessage("Rất tốt"),
     "excited": MessageLookupByLibrary.simpleMessage("Excited"),
     "existing_stock": MessageLookupByLibrary.simpleMessage(
       "Hàng tồn kho hiện có",
@@ -959,6 +961,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Đơn vị đo lường (UOM)",
     ),
     "failed": MessageLookupByLibrary.simpleMessage("Không đạt"),
+    "fair": MessageLookupByLibrary.simpleMessage("Trung bình"),
     "family": MessageLookupByLibrary.simpleMessage("Family"),
     "familyS": MessageLookupByLibrary.simpleMessage("Family\'s"),
     "fanta": MessageLookupByLibrary.simpleMessage("Fanta"),
@@ -1066,6 +1069,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "fpoSavingsMember": m7,
     "fpoSavingsNonMember": m8,
+    "fpoTrackRecord": MessageLookupByLibrary.simpleMessage(
+      "Lịch sử hoạt động của FPO",
+    ),
     "free": MessageLookupByLibrary.simpleMessage("Free"),
     "freePlan": MessageLookupByLibrary.simpleMessage("Free Plan"),
     "freeUsers": MessageLookupByLibrary.simpleMessage("Free Users"),
@@ -1120,6 +1126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "getStartedNow": MessageLookupByLibrary.simpleMessage("Get Started Now"),
     "ghostButtons": MessageLookupByLibrary.simpleMessage("Ghost Buttons"),
     "goBack": MessageLookupByLibrary.simpleMessage("Go Back"),
+    "good": MessageLookupByLibrary.simpleMessage("Tốt"),
     "googleMap": MessageLookupByLibrary.simpleMessage("Google Map"),
     "governingLaw": MessageLookupByLibrary.simpleMessage("Governing Law"),
     "grain_appearance_color": MessageLookupByLibrary.simpleMessage(
@@ -1515,6 +1522,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Không cần xác minh",
     ),
     "no_data": MessageLookupByLibrary.simpleMessage("Không có dữ liệu"),
+    "none": MessageLookupByLibrary.simpleMessage("Không có"),
     "notSatisfiedWeOfferA30DayMoneyBackGuaranteeNoQuestionsAsked":
         MessageLookupByLibrary.simpleMessage(
           "Not satisfied? We offer a 30-day money-back guarantee. No questions asked",
@@ -1743,6 +1751,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "polishing_stage": MessageLookupByLibrary.simpleMessage("9.Đánh bóng"),
     "politics": MessageLookupByLibrary.simpleMessage("Politics"),
+    "poor": MessageLookupByLibrary.simpleMessage("Kém"),
     "position": MessageLookupByLibrary.simpleMessage("Position"),
     "potato": MessageLookupByLibrary.simpleMessage("Potato"),
     "powerful": MessageLookupByLibrary.simpleMessage("Powerful"),
@@ -1797,10 +1806,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "proficient": MessageLookupByLibrary.simpleMessage("Proficient"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileEditTitle": MessageLookupByLibrary.simpleMessage(
+      "Thông tin người dùng",
+    ),
     "profileHint": MessageLookupByLibrary.simpleMessage(
       "Chỉ mất khoảng 10 giây. Chỉ lưu trữ trên thiết bị.",
     ),
+    "profileNameLabel": MessageLookupByLibrary.simpleMessage("Họ tên"),
+    "profileNameNotSet": MessageLookupByLibrary.simpleMessage("Chưa đặt tên"),
+    "profileNameRequired": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng nhập họ tên",
+    ),
+    "profileNameTooShort": MessageLookupByLibrary.simpleMessage(
+      "Họ tên quá ngắn",
+    ),
+    "profilePhoneLabel": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
     "profilePicture": MessageLookupByLibrary.simpleMessage("Profile Picture"),
+    "profileRoleLabel": MessageLookupByLibrary.simpleMessage("Vai trò"),
+    "profileRoleNotSet": MessageLookupByLibrary.simpleMessage(
+      "Chưa chọn vai trò",
+    ),
+    "profileRoleRequired": MessageLookupByLibrary.simpleMessage(
+      "Vui lòng chọn vai trò",
+    ),
     "profit": MessageLookupByLibrary.simpleMessage("Lợi nhuận"),
     "profit_margin_percent": MessageLookupByLibrary.simpleMessage(
       "Biên lợi nhuận (%)",
@@ -1927,9 +1955,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "riskFreeSatisfactionGuaranteed": MessageLookupByLibrary.simpleMessage(
       "Risk-Free Satisfaction Guaranteed",
     ),
+    "roleFarmer": MessageLookupByLibrary.simpleMessage("Nông dân"),
+    "roleFpoAdmin": MessageLookupByLibrary.simpleMessage("Quản trị FPO"),
     "roleInFpoOptional": MessageLookupByLibrary.simpleMessage(
       "Vai trò trong FPO (không bắt buộc)",
     ),
+    "roleLoanOfficer": MessageLookupByLibrary.simpleMessage("Cán bộ tín dụng"),
     "rounded": MessageLookupByLibrary.simpleMessage("Rounded"),
     "roundedInput": MessageLookupByLibrary.simpleMessage("Rounded Input"),
     "runningOrder": MessageLookupByLibrary.simpleMessage("Running Order"),
@@ -1971,6 +2002,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchProductByName": MessageLookupByLibrary.simpleMessage(
       "Search product by name",
     ),
+    "seasonalIncome": MessageLookupByLibrary.simpleMessage("Thu nhập theo mùa"),
     "second": MessageLookupByLibrary.simpleMessage("Second"),
     "secondary": MessageLookupByLibrary.simpleMessage("Secondary"),
     "sectionFarm": MessageLookupByLibrary.simpleMessage("Thông tin nông trại"),
@@ -1999,6 +2031,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectEmployee": MessageLookupByLibrary.simpleMessage("Select Employee"),
     "selectEndDate": MessageLookupByLibrary.simpleMessage("Select end date"),
     "selectEndTime": MessageLookupByLibrary.simpleMessage("Select end time"),
+    "selectFpoTrackRecord": MessageLookupByLibrary.simpleMessage(
+      "Chọn lịch sử hoạt động",
+    ),
     "selectItems": MessageLookupByLibrary.simpleMessage("Select Items"),
     "selectOne": MessageLookupByLibrary.simpleMessage("Select One"),
     "selectPosition": MessageLookupByLibrary.simpleMessage("Select Position"),

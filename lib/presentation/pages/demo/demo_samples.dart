@@ -19,6 +19,9 @@ class DemoSamples {
       'isFpoMember': true,
       'fpoName': 'Mekong FPO',
       'fpoRole': 'Member',
+      'fpoTrackRecord': 'GOOD',
+      'businessYears': 4,
+      'seasonalIncome': 200.5,
       'status': 'submitted_demo',
     };
   }

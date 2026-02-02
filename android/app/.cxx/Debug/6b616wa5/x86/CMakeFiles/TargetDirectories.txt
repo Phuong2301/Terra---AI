@@ -1,0 +1,2 @@
+D:/TT Terratech/mekong_credit_assessment_app/android/app/.cxx/Debug/6b616wa5/x86/CMakeFiles/edit_cache.dir
+D:/TT Terratech/mekong_credit_assessment_app/android/app/.cxx/Debug/6b616wa5/x86/CMakeFiles/rebuild_cache.dir

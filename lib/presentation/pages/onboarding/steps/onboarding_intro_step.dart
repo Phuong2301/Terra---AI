@@ -2,7 +2,7 @@ import 'package:app_mobile/presentation/widgets/button/language_menu_button.dart
 import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart' as l;
 
-import '../models/onboard_page_data.dart';
+import '../../../model/onboard_page_data.dart';
 import '../services/onboarding_storage.dart';
 import '../widgets/dots_indicator.dart';
 import '../widgets/onboard_page.dart';

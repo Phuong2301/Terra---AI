@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../models/onboard_page_data.dart';
+import '../../../model/onboard_page_data.dart';
 
 class OnboardPage extends StatelessWidget {
   const OnboardPage({super.key, required this.data});
